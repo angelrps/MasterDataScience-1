@@ -80,11 +80,12 @@ cat -n $FILE_INPUT
 ## 2. Shell Script Exercises
 
 1. Create a script that will return  column names together with their column number from the csv files. The first argument should be file name and the second delimiter.
+- [Exercise 1](https://github.com/emunozlorenzo/MasterDataScience/blob/master/02_shell_Scripts/01_shell_Script.sh)
 
 2. Create a script that accepts a CSV filename as input ($1 inside your script) and returns the model of the aircraft with the highest number of engines. (use it on  ~/Data/opentraveldata/optd_aircraft.csv) 
-
+- [Exercise 2](https://github.com/emunozlorenzo/MasterDataScience/blob/master/02_shell_Scripts/02_shell_Script.sh)
 3. Repeat script 2, but add a second argument to accept number of a column with the number of engines. If several planes have the highest number of engines, then the script will only show one of them.  (use it on  ~/Data/opentraveldata/optd_aircraft.csv) 
-
+- [Exercise 3](https://github.com/emunozlorenzo/MasterDataScience/blob/master/02_shell_Scripts/03_shell_Script.sh)
 4. Create a script that accepts as input arguments the name of the CSV file, and a number (number of engines) and returns number of aircrafts that have that number of engines. (use it on  ~/Data/opentraveldata/optd_aircraft.csv)  
-
+- [Exercise 4](https://github.com/emunozlorenzo/MasterDataScience/blob/master/02_shell_Scripts/04_shell_Script.sh)
 
