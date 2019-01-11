@@ -13,7 +13,9 @@ Convert JSON to CSV::
 ### csvcut
 
 -d delimiter (-d "," by default)
+
 -c column (column_name or column_number)
+
 -n display column names and index
 
 Print column names:
@@ -34,7 +36,9 @@ Reorder columns::
 Render a csv file
 
 -d delimiter
+
 -H csv file without header row
+
 -l show line numers
 
     csvlook -d "^" data.csv
@@ -45,7 +49,9 @@ Truncate lines wider than window - TOP
     csvlook -ld "^" data.csv | less -S
 ### csvstat
 Descriptive statistics
+
 -d delimeter
+
 -c column
 
     csvstat -d "^" -c 2-4,7 data.csv | less
@@ -55,7 +61,9 @@ Descriptive statistics
 This is similar to unix "grep" command with output delimiter ","
 
 -m pattern
+
 -i invert the result
+
 -a any listed column must match the search string (by default is all)
 
     csvgrep -d "^" -m 380 data.csv
@@ -76,7 +84,9 @@ Find rows with matching cells::
 This is similar to unix "sort" command with output delimiter ","
 
 -r reverse
+
 -n display column names and index
+
 -c columns
 
     csvsort -n -d "^" data.csv
@@ -88,6 +98,7 @@ Stack up (apila) the rows from multiple CSV files
     csvstack data1.csv data2.csv | less
 ### csvjoin
 Execute a SQL-like join to merge CSV files on a specified column or columns.
+
 _Don't try this on very large files_
 
 ### csvformat
@@ -101,6 +112,7 @@ Convert a CSV file to a custom output format
 
 ### csvsql
 Generate SQL statements for one or more CSV files
+
 -i Database
 
     csvsql -d "^" data.csv > sql_data.sql
@@ -127,9 +139,20 @@ And much more...
 
 ## CSVtoolkit Exercises
 1. Use csvstat to find out how many different manufactures are in the file
-
+```
+csvstat -d "^" -c manufacturer optd_aircraft.csv
+```    
 2. Extract the column manufacturer and using pipes, use sort, uniq and wc  find out how many manufacturers are in the file. Why does this number differ to the number reported in csvstat?
-
+```
+csvcut -d '^' -c manufacturer optd_aircraft.csv | tail -n+2 | sort | uniq | wc –l
+```   
 3. What are the top 5 manufacturers? 
-
+```
+csvcut -d '^' -c manufacturer optd_aircraft.csv | tail -n+2 | sort | uniq -c | sort -nr | head -5
+```   
 4. Using csvgrep, get only the records with manufacturer equal to Airbus and save them to a file with pipe (|) delimiter.
+```
+csvgrep -d '^' -c manufacturer -m Airbus optd_aircraft.csv | tr "," "|" > airbus.csv 
+csvgrep -d '^' -c manufacturer -m Airbus optd_aircraft.csv | csvformat -D '|' > airbus.csv
+```   
+
