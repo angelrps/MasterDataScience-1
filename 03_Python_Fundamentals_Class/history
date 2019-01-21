@@ -1,0 +1,16 @@
+%hist -f history
+
+def search_string_in_hist(string):
+    
+    '''Function that accepts string as search string and returns
+    number of lines with that string in a command history (hint : use a in b)'''
+    
+    f = open('history')
+    count = 0
+    
+    for line in f:
+        if string in line:
+            count += 1
+    return count  
+
+search_string_in_hist('hist')
