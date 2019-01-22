@@ -1,6 +1,6 @@
 # Pandas on my own
 
-Exercises based on Based on Pandas Practices by [Kevin Markham](https://github.com/justmarkham) at PYCON CLEVELAND 2018
+Exercises based on Pandas Practices by [Kevin Markham](https://github.com/justmarkham) at PYCON CLEVELAND 2018
 
 ## Data sets
 
