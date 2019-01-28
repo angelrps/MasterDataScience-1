@@ -2,16 +2,16 @@
 
 Based on Machine Learning Practices by [Kevin Markham](https://github.com/justmarkham)
 
-## What is machine learning?
+## What is Machine Learning?
 
-> Machine learning is the semi-automated extraction of knowledge from data
+Machine learning is the semi-automated extraction of knowledge from data
 
 [The Learning Problem - Introduction; supervised, unsupervised, and reinforcement learning. Components of the learning problem. Lecture 1 of 18 of Caltech's Machine Learning Course - CS 156 by Professor Yaser Abu-Mostafa](https://www.youtube.com/watch?time_continue=83&v=mbyG85GZ0PI)
 
 [Video and Slides](http://work.caltech.edu/library/014.html)
 
 
-## Types of machine learning algorithms
+## Types of Machine Learning Algorithms
 
 ### 1. Supervised Learning
 
