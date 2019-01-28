@@ -10,13 +10,13 @@ Exercises based on Pandas Practices by [Kevin Markham](https://github.com/justma
 
 ## Topics
 
-1. [Introducing The Data Set](https://github.com/emunozlorenzo/MasterDataScience/blob/master/05_Pandas_On_My_Own/01_Pandas_Introducing_The_Dataset.ipynb)
-2. [Removing Columns](https://github.com/emunozlorenzo/MasterDataScience/blob/master/05_Pandas_On_My_Own/02_Pandas_Removing_Columns.ipynb)
-3. [Comparing Groups](https://github.com/emunozlorenzo/MasterDataScience/blob/master/05_Pandas_On_My_Own/03_Pandas_Comparing_Groups.ipynb)
-4. [Examining Relatioships](https://github.com/emunozlorenzo/MasterDataScience/blob/master/05_Pandas_On_My_Own/04_Pandas_Examining_Relationships.ipynb)
-5. [Handling Missing Values](https://github.com/emunozlorenzo/MasterDataScience/blob/master/05_Pandas_On_My_Own/05_Pandas_Handling_Missing_Values.ipynb)
-6. [Using String Methods](https://github.com/emunozlorenzo/MasterDataScience/blob/master/05_Pandas_On_My_Own/06_Pandas_Using_String_Methods.ipynb)
-7. [Combining Dates And Times](https://github.com/emunozlorenzo/MasterDataScience/blob/master/05_Pandas_On_My_Own/07_Pandas_combining_Dates_and_Times.ipynb)
-8. [Plotting A Time Series](https://github.com/emunozlorenzo/MasterDataScience/blob/master/05_Pandas_On_My_Own/08_Pandas_Plotting_A_Time_Series.ipynb)
-9. [Creating Useful Plots](https://github.com/emunozlorenzo/MasterDataScience/blob/master/05_Pandas_On_My_Own/09_Pandas_Creating_Useful_Plots.ipynb)
-10. [Fixing Bad Data](https://github.com/emunozlorenzo/MasterDataScience/blob/master/05_Pandas_On_My_Own/10_Pandas_Fixing_Bad_Data.ipynb)
+1. [Introducing The Data Set](https://github.com/emunozlorenzo/MasterDataScience/blob/master/05_Pandas_on_my_own/01_Pandas_Introducing_The_Dataset.ipynb)
+2. [Removing Columns](https://github.com/emunozlorenzo/MasterDataScience/blob/master/05_Pandas_on_my_own/02_Pandas_Removing_Columns.ipynb)
+3. [Comparing Groups](https://github.com/emunozlorenzo/MasterDataScience/blob/master/05_Pandas_on_my_own/03_Pandas_Comparing_Groups.ipynb)
+4. [Examining Relatioships](https://github.com/emunozlorenzo/MasterDataScience/blob/master/05_Pandas_on_my_own/04_Pandas_Examining_Relationships.ipynb)
+5. [Handling Missing Values](https://github.com/emunozlorenzo/MasterDataScience/blob/master/05_Pandas_on_my_own/05_Pandas_Handling_Missing_Values.ipynb)
+6. [Using String Methods](https://github.com/emunozlorenzo/MasterDataScience/blob/master/05_Pandas_on_my_own/06_Pandas_Using_String_Methods.ipynb)
+7. [Combining Dates And Times](https://github.com/emunozlorenzo/MasterDataScience/blob/master/05_Pandas_on_my_own/07_Pandas_combining_Dates_and_Times.ipynb)
+8. [Plotting A Time Series](https://github.com/emunozlorenzo/MasterDataScience/blob/master/05_Pandas_on_my_own/08_Pandas_Plotting_A_Time_Series.ipynb)
+9. [Creating Useful Plots](https://github.com/emunozlorenzo/MasterDataScience/blob/master/05_Pandas_on_my_own/09_Pandas_Creating_Useful_Plots.ipynb)
+10. [Fixing Bad Data](https://github.com/emunozlorenzo/MasterDataScience/blob/master/05_Pandas_on_my_own/10_Pandas_Fixing_Bad_Data.ipynb)
