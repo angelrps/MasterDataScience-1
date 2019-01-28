@@ -10,7 +10,7 @@ Machine learning is the semi-automated extraction of knowledge from data
 
 [Video and Slides](http://work.caltech.edu/library/014.html)
 
-![alt text](/home/dsc/Repos/MasterDataScience/06_Machine_Learning_on_my_own/Img/image.png "Logo Title Text 1")
+![alt text](https://github.com/emunozlorenzo/MasterDataScience/blob/master/06_Machine_Learning_on_my_own/Img/image.png "Logo Title Text 1")
 
 ## Types of Machine Learning Algorithms
 
