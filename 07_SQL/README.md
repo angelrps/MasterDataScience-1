@@ -107,3 +107,57 @@ masterdc=# SELECT * FROM facebook ORDER BY age DESC;
 masterdc=# SELECT * FROM facebook ORDER BY age, name;
 masterdc=# SELECT * FROM facebook ORDER BY age DESC, name ASC;
 ```
+### Limiting the number of results
+```sh       
+masterdc=# SELECT * FROM facebook ORDER BY age DESC LIMIT 5;
+```
+With offset we can start counting at the specific line
+```sh       
+masterdc=# SELECT * FROM facebook ORDER BY age DESC OFFSET 5 LIMIT 3;
+```
+### Logical operators
+AND OR NOT BETWEEN IN
+```sh       
+masterdc=# SELECT * FROM facebook WHERE age BETWEEN 18 AND 30;
+masterdc=# SELECT * FROM facebook WHERE age NOT IN (24,32,35);
+```
+### Aggregate function
+Compute a single result value from a set of input values.
+
+AVG COUNT MAX MIN SUM
+```sh       
+masterdc=# SELECT COUNT(*) FROM facebook;
+masterdc=# SELECT AVG(age), MIN(age), MAX(age) FROM facebook;
+```
+### Group by
+- Is used to group together those rows in a table that share the same values in all the columns listed.
+- The effect is to combine each set of rows sharing common values into one group row that is representative of all rows in the group
+- This is done to eliminate redundancy in the output and/or compute aggregates that apply to these groups.
+```sh       
+masterdc=# SELECT city, COUNT(*), AVG(age) FROM facebook GROUP BY city;
+masterdc=# SELECT city, age, COUNT(*) FROM facebook GROUP BY city, age;
+masterdc=# SELECT city, COUNT(*), AVG(age) FROM facebook GROUP BY city HAVING AVG(age)>20;
+```
+### Multiple queries
+- The result of a query is nothing more than a temporal table. Hence we can apply a query over the result of another query.
+```sh
+masterdc=# SELECT *, ( SELECT AVG(age) FROM facebook WHERE city='Madrid' ) AS Mad_average FROM facebook;
+masterdc=# SELECT *, ( SELECT AVG(age) FROM facebook WHERE city='Madrid' ) AS Mad_average FROM facebook WHERE age <(SELECT AVG(age) FROM facebook WHERE city=’Madrid’); 
+```
+
+WHERE + IN, ANY, ALL
+```sh
+masterdc=# SELECT * FROM facebook WHERE city IN (SELECT city FROM facebook GROUP BY city HAVING AVG(edad)>35) ;
+masterdc=# SELECT * FROM facebook WHERE username = ANY (SELECT name FROM friends WHERE name LIKE '%a%‘);
+```
+### JOINS
+- Joins the result of different queries
+- Join combination can be:
+    - INNER JOIN,
+    - LEFT OUTER JOIN,
+    - RIGHT OUTER JOIN,
+    - FULL JOIN
+- Multiple quieries(especially join) can be very slow and can consume a lot of memory.
+- Data model should facilitate multiple queries, buttry NOT to duplicate too much the data
+
+
