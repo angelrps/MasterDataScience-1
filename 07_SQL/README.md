@@ -16,7 +16,7 @@ masterdc(#                         age INT,
 masterdc(#                         city VARCHAR,
 masterdc(#                         email VARCHAR);
 ```
-![alt text](https://github.com/emunozlorenzo/MasterDataScience/tree/master/07_SQL/Img/image.JPG "Figure 1-1")
+![alt text](https://github.com/emunozlorenzo/MasterDataScience/tree/master/07_SQL/Img/image.png "Figure 1-1")
 
 ```sh       
 masterdc=# INSERT INTO facebook VALUES('Alberto',28,'Madrid','al@gmail.com');
