@@ -1,0 +1,407 @@
+ll
+seq 10
+seq 5 10
+seq 5 2 15
+seq 1 2 10
+seq 1 2 10 > uniq_example.txt
+cat uniq_example.txt
+seq 1 10
+seq 1 10 >> uniq_example.txt
+cat uniq_example.txt
+uniq uniq_example.txt
+cat uniq_example.txt| uniq
+sort uniq_example.txt
+sort uniq_example.txt | uniq
+sort uniq_example.txt | uniq -d
+sort uniq_example.txt | uniq -c
+sort uniq_example.txt 
+sort -n uniq_example.txt 
+sort -d uniq_example.txt 
+sort -dr uniq_example.txt 
+sort -d -r uniq_example.txt 
+sort -d -u -r uniq_example.txt 
+sort -d  -r uniq_example.txt | uniq
+cd Data/opentraveldata
+ls
+ll
+head -5 optd_aircraft.csv
+sort -t "^" -k 6 optd_aircraft.csv | head
+sort -t "^" -k 6r optd_aircraft.csv | head
+sort -t "^" -k 6r,6 optd_aircraft.csv | head
+sort -t "^" -k 6r,6  -k8,8 optd_aircraft.csv | head
+sort -t "^" -k 6r,6  -k8r,8 optd_aircraft.csv | head
+find 
+find ~ 
+find ~ -type f -size +1M | wc
+find ~ -type f -size +10M | wc
+find ~ -type f -size +20M | wc
+find ~ -type f -size +40M | wc
+find ~ -type f -size +40M 
+ll 
+ll /home/dsc/anaconda3/bin/pandoc
+ls -l 
+ls -s /home/dsc/anaconda3/bin/pandoc
+find ~ -type f -size +40M 
+find ~ -type f -size +40M | ls 
+find ~ -type f -size +40M | ls -s
+find ~ -type f -size +40M -exec ls -s {} \;
+find ~ -type f -size +40M -exec echo "FOUND" \;
+find ~ -type f -size +40M -exec ls -s {} \;
+find ~ -type f -size +40M -exec ls -s {} \; | sort -n 
+find ~ -type f -size +40M -exec ls -s {} \; | sort -nr 
+cd
+find ~ -type f -size +40M -exec ls -s {} \; | sort -nr 
+find ~ -type f -size +40M -exec ls -s {} \; | sort -nr | head 
+find ~ -type f -size +20M -exec ls -s {} \; | sort -nr | head -10
+find ~ -type f -exec ls -s {} \; | sort -nr | head -10
+sort uniq_example.txt 
+sort uniq_example.txt uniq_example.txt uniq_example.txt
+seq 15 >20lines.txt
+seq 9 1 20 >> 20lines.txt
+echo "20\n20" >> 20lines.txt
+sort -d 20lines.txt
+sort -n -u 20lines.txt
+sort 20lines.txt -d
+sort 20lines.txt 
+sort 20lines.txt -d mnknlkjn
+sort 20lines.txt
+sort 20lines.txt -d
+sort 20lines.txt 
+sort 20lines.txt | head
+sort 20lines.txt -d | head
+sort 20lines.txt -c | head
+sort 20lines.txt -n | head
+sort 20lines.txt | uniq -d 
+sort 20lines.txt | uniq -c
+sort 20lines.txt | uniq -c | sort -nr
+sort 20lines.txt | uniq -c | sort -nr | head -1
+sort 20lines.txt | uniq -c 
+sort 20lines.txt | uniq -c | sort -k 2,2
+sort 20lines.txt | uniq -c | sort -d -k 2,2
+sort 20lines.txt | uniq -c | sort -d -k 2r,2
+sort 20lines.txt | uniq -c | sort -t " " -d -k 8r,r
+sort 20lines.txt | uniq -c | sort -t " " -d -k 7r,r
+sort 20lines.txt | uniq -c | sort -t " " -d -k 5,r
+sort 20lines.txt | uniq -c | sort -t " " -d -k 5r,5
+sort 20lines.txt | uniq -c | sort -t " " -d -k 7r,7
+sort 20lines.txt | uniq -c | sort -t " " -d -k 8r,8
+cd -
+sort -t "^" -k 6r,6  -k8r,8 optd_aircraft.csv | head
+head optd_aircraft.csv
+cut -d "^" -f 1-4,6
+cut -d "^" -f 1-4,6 optd_aircraft.csv |head 
+cut -d "^" -f 1-4,6 --output-delimiter="," optd_aircraft.csv |head 
+cut -d "^" -f 1-4,6 --output-delimiter="PALABRA" optd_aircraft.csv |head 
+cut -d "^" -f 1-4,6 --output-delimiter="PALABRA" optd_aircraft.csv | cut -d "PALABRA" -f 2 
+seq 10 
+seq 10  |paster
+seq 10  |paste
+seq 10  |paste -s 
+seq 10  |paste -s -d "^"
+seq 10  |paste -s -d "ABC"
+seq 10  |paste -s ---
+seq 10  |paste  ---
+seq 10  |paste  - - -
+man paste
+cd ../shell
+head Text_example.txt Finn.txt
+head <Text_example.txt <Finn.txt
+head < Text_example.txt <F inn.txt
+head < Text_example.txt <Finn.txt
+head <Text_example.txt<Finn.txt
+head <Text_example.txt <Finn.txt
+head <Text_example.txt
+head Text_example.txt
+head <(cat Text_example.txt) 
+head <(cat Text_example.txt) <(cat ./file2.txt)
+seq 1 10 > numbers
+head <(cat Text_example.txt file2.txt) 
+head -3 <(cat Text_example.txt file2.txt) 
+paste <(cat numbers) <(cat Text_example)
+paste <(cat numbers) <(cat Text_example.txt)
+paste <(cat numbers) <(cat Text_example.txt) <(cat numbers)
+paste  <(cat Text_example.txt) <(cat numbers)
+paste numbers Text_example.txt
+zsh
+bash
+exit
+TODAY=$(date)
+echo $TODAY
+echo "$(date)"
+echo $(date)
+echo '$(date)'
+echo `date`
+paste  <(cat Text_example.txt) <(cat numbers)
+paste numbers Text_example.txt
+paste <(cat numbers) <(cat Text_example.txt) <(cat numbers)
+paste numbers Text_example.txt
+paste <(cat numbers) <(cat Text_example.txt)
+echo "master data scince" |  tr a A
+echo "master data scince" |  tr ab ba
+echo "master      data      scince" |  tr -s 
+echo "master      data      scince" |  tr -s " " 
+echo "master      data      scince" |  tr -d " " 
+echo "master      data      scince" |  tr -c " " 
+echo "master      data      scince" |  tr -cd " " 
+echo "master      data      scince" |  tr -d " " 
+echo "master      data      scince" |  tr -d "m" 
+echo "master      data      scince" |  tr -dc "m" 
+echo "master      data      scince" |  tr -dc "m " 
+echo "master      data      scince" |  tr "[:lower:]" "[:upper:]
+echo "master      data      scince" |  tr "[:lower:]" "[:upper:]"
+cd ../opentraveldata
+head -1 optd_por_public.csv | tr -dc "^" | wc
+head -1 optd_por_public.csv | tr  "^" "\n" | wc
+head -1 optd_por_public.csv | tr dc "^" | wc
+head -1 optd_por_public.csv | tr dc "^" 
+paste <(seq 10) <(head -1 optd_por_public.csv |tr "^" "\n" )
+paste <(seq 10) <(head -1 optd_por_public.csv |tr "^" "\n" ) |head
+paste <(seq 46) <(head -1 optd_por_public.csv |tr "^" "\n" ) |head
+paste <(seq 46) <(head -1 optd_por_public.csv |tr "^" "\n" )
+paste <(seq <(head -1 optd_aircraft.csv | tr "^" "\n" | wc -l )) <(head -1 optd_por_public.csv |tr "^" "\n" )
+paste <(seq <(head -1 optd_aircraft.csv | tr "^" "\n" | wc -l)) <(head -1 optd_por_public.csv |tr "^" "\n" )
+cd ../shell
+grep this Text_example.txt
+grep -v this Text_example.txt
+grep -i this Text_example.txt
+grep -c this Text_example.txt
+grep -c this Text_example.txt Text_example.txt
+grep -cv this Text_example.txt Text_example.txt
+grep this Text_example.txt Finn.txt
+grep -c this Text_example.txt Text_example.txt
+grep -n this Text_example.txt
+grep -n -A 3this Text_example.txt
+grep -n -A 3 this Text_example.txt
+grep -n -A 3 First Text_example.txt
+grep -n -A 3 this Text_example.txt
+grep -n -B 3 First Text_example.txt
+grep -n -C 3 First Text_example.txt
+grep -n this  Text_example.txt Text_example_with_num.txt
+grep -n -H this  Text_example.txt Text_example_with_num.txt
+grep -n this  Text_example.txt Text_example_with_num.txt
+grep -n -E "^T" Text_example.txt
+grep -n "^T" Text_example.txt
+seq 5 5 20
+seq 5 5 20 | grep -E "[1-5]{2}"
+seq 5 5 20 | grep "[1-5]{2}"
+seq 5 5 20 | grep -E "[1-5]"
+seq 5 5 20 | grep -E "[1-5][0]"
+grep -E "3[0-9]{2}" ../opentraveldata/optd_aircraft.csv
+cd ../opentraveldata
+head optd_aircraft.csv
+cut -d "^" -f 3 optd_aircraft.csv| grep -E "3[0-9]{2}"
+echo Sunday | sed ssdaysnights
+echo Sunday | sed 's/day/night/'
+echo Sunday | sed s/day/night/
+echo day.day | sed s/day/night/
+echo day.day | sed s/day/night/g
+echo day.day > test.file
+echo day.night >> test.file
+cat test.file
+cat test.file| sed s/day/night/g
+sed -i s/day/night/g test.file 
+cat test.file
+seq 10 15
+cat test.file| sed s/day/night/g >test.file
+seq 10 15
+seq 10 15 | sed '3d'
+seq 10 15 | sed '/13/d'
+seq 10 21  | sed '/1/d'
+echo day.day | sed /day/d
+seq 10 15 | sed '3!d'
+seq 10 15 | sed '3d'
+seq 10 15 | sed '3d' >bunes_lineas
+seq 10 15 | sed '3!d' >mala_linea
+seq 10 21  | sed '/1/!d'
+seq 10 21  | sed '/1/d'
+cd ..
+cd shell
+ll
+zip text_files Finn.txt Text_example.txt
+ll
+mkdir zip_example
+mv text_files.zip zip_example
+cd zip_example
+ll
+unzip text_files.zip
+ll
+unzip -l text_files.zip
+zipinfo text_files.zip
+zless text_files.zip 
+zcat text_files.zip| head
+cd ..
+ll
+gzip Finn.txt Text_example.txt
+ll
+zcat Finn.txt.gz| less
+zgrep this Finn.txt.gz
+zgrep "this" Finn.txt.gz
+zgrep this Text_example.txt.gz
+gunzip Finn.txt.gz Text_example.txt.gz
+ll
+bzip2 Text_example.txt Finn.txt
+ll
+bunzip2 Finn.txt.bz2 Text_example.txt.bz2
+tar -czvf text_files.gz.tar text_with_timestamp.txt Text_example.txt
+ll
+tar -czvf text_files.gz.tar text_with_timestamp.txt Text_example.txt
+tar -czvf text_files.gz.tar Finn.txt
+tar -xvf text_files.gz.tar
+tar -cjvf text_files.gz.tar text_with_timestamp.txt Text_example.txt
+cd ../opentraveldata
+ll
+ls
+head -1 optd_por_public.csv | tr  "^" "\n" | wc
+paste <(seq 10) <(head -1 optd_por_public.csv |tr "^" "\n" )
+head -1 optd_por_public.csv |tr "^" "\n" 
+head -1 optd_por_public.csv | tr  "^" "\n" | wc
+head -1 optd_por_public.csv |tr "^" "\n" 
+touch column_name_number.sh
+gedit column_name_number.sh
+cd Data/shell
+history
+cd ../opentraveldata
+gedit column_name_number.sh
+jkhfkgjhdfkjghdfkgjhdf
+jhdfkjhdfkgjhdfg
+gedit column_name_number.sh &
+bash ./column_name_number.sh
+./column_name_number.sh
+chmod 777 ./column_name_number.sh
+./column_name_number.sh
+column_name_number.sh
+which bash
+which python
+column_name_number.sh
+./column_name_number.sh
+ll
+./column_name_number.sh
+./column_name_number.sh test me
+echo $0
+./column_name_number.sh ./column_name_number.sh ^
+./column_name_number.sh ./optd_airlines.csv ^
+./column_name_number.sh ./optd_airlines.csv "^"
+./column_name_number.sh ./optd_airlines.csv ^
+./column_name_number.sh ./optd_airlines.csv "^"
+./column_name_number.sh ./optd_airlines.csv ^
+./column_name_number.sh ./optd_airlines.csv "^"
+./column_name_number.sh ./optd_por_public.csv "^"
+echo $PATH
+echo $PATH | tr : "\n"
+mkdir my_scripts
+cd Data/opentraveldata
+ll
+mv column_name_number.sh ~/my_scripts
+cd
+ls my_scripts
+gedit .zshrc
+cd Data/opentraveldata
+column_name_number.sh ./optd_aircraft.csv "^"
+cd 
+ll
+psql 
+psql -d
+psql -l
+psql -c postgres
+psql -d postgres
+cd Repos
+cd csvkit
+git remote -v
+cd 
+cd Data/opentraveldata
+ls
+ll
+rm bunes_lineas mala_linea test.file
+ll
+csvstat optd_aircraft.csv
+csvstat -d "^" optd_aircraft.csv
+csvstat -d "^" optd_aircraft.csv |less
+head optd_aircraft.csv
+csvstat -d "^" optd_aircraft.csv |less
+csvlook -d "^" optd_aircraft.csv
+csvlook -d "^" optd_por_public.csv 
+csvlook -d "^" optd_airlines.csv
+csvlook -d "^" optd_airlines.csv | less -S
+csvlook -d "^" optd_airlines.csv | less -S 
+csvlook -d "^" optd_aircraft.csv | less -S 
+csvlook -d "^" -n optd_aircraft.csv | less -S
+csvlook -d "^" -l optd_aircraft.csv | less -S
+head optd_aircraft.csv
+csvcut -d "^" -c 2-4 optd_aircraft.csv | less  
+csvcut --help
+csvcut --help |less
+csvcut -d "^" -c 2-4 optd_aircraft.csv | less  
+csvcut -d "^" -c manufacturer optd_aircraft.csv | less  
+csvcut -d "^" -n -c manufacturer optd_aircraft.csv | less  
+csvcut -d "^" -n optd_aircraft.csv   
+csvcut -d "^" -c manufacturer optd_aircraft.csv | csvlook 
+csvcut -d "^" -c manufacturer optd_aircraft.csv | csvlook  |less
+csvcut -d "^" -c manufacturer optd_aircraft.csv
+csvcut -d "^" -c 2-4 optd_aircraft.csv | less  
+csvcut -d "^" -c 2-4 optd_aircraft.csv |csvlook
+csvgrep -d "^" -m 380 optd_aircraft.csv| less 
+csvgrep -d "^" -m 380 -c iata_code optd_aircraft.csv| less 
+csvgrep -d "^" -m 380 -c iata_code optd_aircraft.csv| csvlook
+csvgrep -d "^" -m "^A" -c manufacture,iata_code optd_aircraft.csv| csvlook
+csvgrep -d "^" -m "^A" -c manufacturer,iata_code optd_aircraft.csv| csvlook
+csvgrep -d "^" -m "^A" -c manufacturer,model optd_aircraft.csv| csvlook
+csvgrep -d "^" -m "[0-9]" -c manufacturer,model optd_aircraft.csv| csvlook
+csvgrep -d "^" -m "^A" -c iata_code,model optd_aircraft.csv| csvlook
+csvgrep -d "^" -m "380" -c iata_code,model optd_aircraft.csv| csvlook
+csvgrep -d "^" -m "380" -c -a iata_code,model optd_aircraft.csv| csvlook
+csvgrep -d "^" -m "380" -a -c iata_code,model optd_aircraft.csv| csvlook
+csvsort -d "^" -c nb_engines optd_aircraft.csv | less
+csvsort -d "^" -c nb_engines optd_aircraft.csv | csvlook | less
+csvsort -d "^" -r -c nb_engines optd_aircraft.csv | csvlook | less
+csvsql -d "^" optd_aircraft.csv| less
+csvsql -d "^" -i oracle optd_aircraft.csv| less
+csvsql -d "^" -i mysql optd_aircraft.csv| less
+csvsql -d "^" -i postgresql optd_aircraft.csv| less
+csvstat -d "^" optd_aircraft.csv
+csvcut -d"^" -c manufacturer optd_aircraft.csv| csvstat
+csvcut -d "^" -c manufacturer optd_aircraft.csv | sort | unique | wc -l
+csvcut -d "^" -c manufacturer optd_aircraft.csv | sort | uniq | wc -l
+csvcut -d "^" -c manufacturer optd_aircraft.csv | sort | uniq | wc 
+csvcut -d "^" -c manufacturer optd_aircraft.csv | sort | uniq -d 
+csvcut -d "^" -c manufacturer optd_aircraft.csv | sort | uniq -d -c 
+csvcut -d "^" -c manufacturer optd_aircraft.csv | sort | uniq -d -c | sort -n 
+csvcut -d "^" -c manufacturer optd_aircraft.csv | sort | uniq -d -c | sort -n -r 
+csvcut -d "^" -c manufacturer optd_aircraft.csv | sort | uniq -d -c | sort -n -r | head -5
+csvcut -d "^" -c manufacturer optd_aircraft.csv | sort | uniq -c | sort -n -r | head -5
+csvcut -d "^" -c manufacturer optd_aircraft.csv | sort | uniq -c
+csvcut -d "^" -c manufacturer optd_aircraft.csv | sort | uniq -c | sort -n -r | head -5
+csvcut -d "^" -c manufacturer optd_aircraft.csv | sort | uniq -c | sort -n 
+csvcut -d "^" -c manufacturer optd_aircraft.csv | sort | uniq -c | sort -n | tail -5 
+csvcut -d "^" -c manufacturer optd_aircraft.csv | sort | uniq -c | sort -n | tail -5 | sort -n -r 
+csvcut -d "^" -c manufacturer optd_aircraft.csv | sort | uniq -c | sort -n | tail -5 | sort -n -r  | head 3
+csvcut -d "^" -c manufacturer optd_aircraft.csv | sort | uniq -c | sort -n | tail -5 | sort -n -r  | head -3
+man sort
+psql
+psql \l
+psql -l
+psql -d postgres
+psql postgres
+cd
+grep 10000 .zshrc
+cat .psql_history
+bash
+alias
+which wget
+cd 
+mkdir sql_files
+cd sql_files
+wget https://raw.gitbubusercontent.com/masterdatascience/postgres/master/my_fb_friends.csv
+wget https://raw.githubusercontent.com/masterdatascience/postgres/master/my_fb_friends.csv
+wget https://raw.githubusercontent.com/masterdatascience/postgres/master/my_ldin_contacts.csv
+ls
+ll
+cat my_fb_friends.csv
+echo "drop table if exists linkedin;" >psql_create_contactos.sql
+cat psql_create_contactos.sql
+mv my_ldin_contacts.csv linkedin
+gedit psql_create_contactos.sql
+csvsql -d "^" linkedin -i postgresql
+gedit psql_create_contactos.sql
+psql -d networking -f ./psql_create_contactos.sql
+cat psql_create_contactos.sql
+cat .history > 2018-12-15.cmdl

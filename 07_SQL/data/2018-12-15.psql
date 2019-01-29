@@ -1,0 +1,194 @@
+\d
+\l
+\q
+\q
+this is one linejkhkjhkjh" fdghfg"'';
+this is one linejkhkjhkjh" fdghfg"'';
+kjhhkjhkjhjhkjhkjkkjhkjhkjhkjhkjhk;
+\! pwd
+\! ls -l
+\! pwd
+\! pwd
+\! cd ..
+\! pwd
+\cd ..
+\! pwd
+CREate DATAbase networking;
+\l
+\ls -l
+\l
+Drop Database networking ;
+\l
+CREate DATAbase networking;
+\! ll
+\! alias
+\l
+\c networking 
+CREATE Table friends (nombre VARCHAR,edad INT,email varCHAR);
+\d
+\d friends 
+drop table friends ;
+\d
+CREATE Table friends (nombre VARCHAR,edad INT,email varCHAR);
+\d friends 
+insert into friends VALUES ("Linoel Messi", 30, 'messi@barca.com');
+insert into friends VALUES ('Linoel Messi', 30, 'messi@barca.com');
+insert into friends VALUES ('Donald', 'donni@gmail.com');
+insert into friends VALUES ('Donald', 60);
+insert into friends VALUES (60, 60);
+insert into friends VALUES (600, '60');
+insert into friends VALUES (600, '0.60');
+insert into friends VALUES (600, '0,60');
+insert into friends VALUES (600, '060');
+insert into friends (nombre, email) VALUES ('Melani', 'my_mail@gmail.com');
+insert into friends VALUES ('Ronaldo', 34, 'r@juve.com'),('Luka',32,'l@madrid.com');
+SELECT * from friends;
+SELECT nombre, email from friends;
+SELECT nombre, email from friends where edad>20;
+SELECT email, edad from friends where edad>20;
+SELECT email, edad from friends where edad==34;
+SELECT email, edad from friends where edad=34;
+SELECT email, edad from friends where edad=34;
+SELECT email, edad from friends where edad!=34;
+SELECT email, edad from friends where edad<>34;
+SELECT email, edad from friends where nombre>34;
+SELECT email, edad from friends where name>34;
+SELECT email, edad from friends where nombre>34;
+SELECT email, edad from friends where nombre LIKE '%T%';
+SELECT email, edad from friends where nombre LIKE '%T';
+SELECT email, edad from friends where nombre LIKE '%D%';
+SELECT * from friends where nombre LIKE '%D%';
+SELECT * from friends where nombre LIKE '%D';
+SELECT * from friends where nombre LIKE 'D';
+SELECT * from friends where nombre LIKE 'D%';
+SELECT * from friends where nombre LIKE '%D%';
+SELECT * from friends where nombre LIKE '%d%';
+SELECT * from friends where nombre NOT LIKE '%d%';
+SELECT * from friends where nombre LIKE '%ld%';
+SELECT * from friends where nombre LIKE '%d0%';
+SELECT * from friends where nombre LIKE '%do%';
+SELECT * from friends where upper(nombre) LIKE '%D%';
+SELECT * from friends where lower(nombre) LIKE '%D%';
+select * from friends where edad is NULL;
+select * from friends where edad is NULL OR Nombre IS NULL;
+select * from friends where edad=NULL;
+select * from friends where edad = NULL;
+select * from friends where edad is NULL;
+;
+SELECT * from friends where upper(nombre) LIKE '%D%';
+SELECT * from friends;
+select * from friends where edad is NULL OR email IS NULL;
+DELETE from friends;
+insert into friends VALUES ('Ronaldo', 34, 'r@juve.com'),('Luka',32,'l@madrid.com');
+SELECT * from friends;
+delete from friends where nombre='Ronaldo'; 
+SELECT * from friends;
+create table facebook (nombre varchar, age int, recidencia varchar, email varchar);
+insert into facebook values ('Bibi', 30, 'Madrid', 'bibi@gmail.com'), ('Kiko', 16, 'Getafe', 'kiko@hotmail.com'), ('Renata', 33, 'MADRID', 'renchi@gmail.com');
+select * from facebook ;
+select * from facebook where upper(residencia) != 'MADRID';
+select * from facebook where upper(recidencia) != 'MADRID';
+drop table facebook ;
+create table facebook (nombre varchar, age int, residencia varchar, email varchar);
+insert into facebook values ('Bibi', 30, 'Madrid', 'bibi@gmail.com'), ('Kiko', 16, 'Getafe', 'kiko@hotmail.com'), ('Renata', 33, 'MADRID', 'renchi@gmail.com');
+\d facebook 
+create table facebook (nombre varchar, age int, residencia varchar, email varchar, PRIMARY KEY (email));
+ALTER tABLE friends ADD PRIMARY key (email);
+\d facebook 
+ALTER tABLE facebook ADD PRIMARY key (email);
+\d facebook 
+ALTER TABLE facebook ADD COLUMN telefono VARCHAR;
+\d facebook 
+select * from facebook ;
+UPDATE facebook SET telefono='+341111111112';
+select * from facebook ;
+UPDATE facebook SET telefono='+34112' where age > 20;
+UPDATE facebook SET telefono='+34112' where email='bibi@gmail.com';
+UPDATE facebook SET telefono='+34113' where email='bibi@gmail.com';
+select * from facebook ;
+ALTER TABLE facebook DROP COLUMN telefono ;
+select * from facebook ;
+\! pwd
+cd ..;
+\cd ..
+\! pwd
+\cd sql_files
+\! ls 
+\! ls 
+\! ls 
+\copy facebook from './my_fb_friends.csv' delimiter '^' csv header;
+select * from facebook ;
+\copy facebook from './my_fb_friends.csv' delimiter '^' csv header;
+select * from facebook order by age;
+select * from facebook order by age reverse;
+select * from facebook order by age DESC;
+select * from facebook order by age;
+select * from facebook order by age DESC;
+select * from facebook order by age ASC;
+select * from facebook order by residencia;
+select * from facebook order by residencia DESC;
+select * from facebook order by residencia DESC, age;
+select * from facebook order by upper(residencia) DESC, age;
+select * from facebook order by upper(residencia) DESC LIMIT 5;
+select * from facebook where age>33 order by upper(residencia) DESC LIMIT 5;
+select * from facebook where age>33 order by upper(residencia) DESC OFFSET LIMIT 5;
+select * from facebook where age>33 order by upper(residencia) DESC OFFSET 1 LIMIT 5;
+select * from facebook where age>33 order by upper(residencia) DESC OFFSET 2 LIMIT 5;
+select * from facebook where order by upper(residencia) DESC OFFSET 2 LIMIT 5;
+select * from facebook where order by upper(residencia) DESC OFFSET 2 LIMIT 5;
+select * from facebook order by upper(residencia) DESC OFFSET 2 LIMIT 5;
+select * from facebook order by upper(residencia) DESC OFFSET 2 ;
+select * from facebook order by upper(residencia)  ;
+select * from facebook order by upper(residencia) OFFSET 1 ;
+select * from facebook order by upper(residencia) OFFSET 1 LIMIT 2;
+select avg(age) from facebook;
+select avg(age), max(age), min(age), sum(age) from facebook;
+select avg(age), max(age), min(age), sum(age), count(age) from facebook;
+select count(*) from facebook;
+select count(*) from facebook;
+select count(age) from facebook;
+
+select residencia, count(*), avg(age) from facebook GROUP BY residencia;
+select residencia, count(*), avg(age) from facebook GROUP BY upper(residencia);
+select upper(residencia), count(*), avg(age) from facebook GROUP BY upper(residencia);
+select upper(residencia), count(*), avg(age) from facebook GROUP BY upper(residencia);
+select * from facebook;
+select upper(residencia), count(*), avg(age) from facebook;
+select residencia, count(*), avg(age) from facebook;
+select count(*), avg(age) from facebook;
+select upper(residencia), count(*), avg(age) from facebook GROUP BY upper(residencia);
+select upper(residencia), count(*), avg(age) from facebook GROUP BY upper(residencia);
+select upper(residencia), count(*), avg(age) from facebook where age> 16 GROUP BY upper(residencia);
+select upper(residencia), count(*), avg(age) from facebook where age> 16 GROUP BY upper(residencia) HAVING count(*)>1;
+create table test (nombre varchar);
+create table test (nombre varchar);
+create table test (nombre varchar);
+drop table test ;
+drop table test ;
+drop table test if exists;
+drop table if exists test;
+drop table if exists test;
+\l
+\d
+\d linkedin 
+\d
+select fb.mail from facebook as fbINNER JOIN linkedin AS lnON fb.mail=ln.email;
+\d facebook
+\d linkedin 
+select fb.email from facebook as fbINNER JOIN linkedin AS lnON fb.email=ln.email;
+select fb.email from facebook as fbINNER JOIN linkedin AS lnON fb.email=ln.email;
+select * from facebook;
+select * from linkedin;
+select facebook.email from facebook INNER JOIN linkedin AS lnON facebook.email=ln.email;
+select facebook.email from facebook INNER JOIN linkedin ON facebook.email=linkedin.email;
+select facebook.email, linkein.email from facebook INNER JOIN linkedin ON facebook.email=linkedin.email;
+select facebook.email, linkedin.email from facebook INNER JOIN linkedin ON facebook.email=linkedin.email;
+create table fb_and_led as select facebook.email, linkedin.email from facebook INNER JOIN linkedin ON facebook.email=linkedin.email;
+create table fb_and_led as select facebook.email from facebook INNER JOIN linkedin ON facebook.email=linkedin.email;
+create table fb_and_led as select facebook.email, linkedin.email  as email2from facebook INNER JOIN linkedin ON facebook.email=linkedin.email;
+
+select facebook.*, linkedin.contact, linkedin.companyfrom facebookleft outer join linkedinon facebook.email=linkedin.email;
+select facebook.*, linkedin.contact, linkedin.companyfrom facebookfull outer join linkedinon facebook.email=linkedin.email;
+select facebook.*, linkedin.* from facebookfull outer join linkedinon facebook.email=linkedin.email;
+select facebook.*, linkedin.* from facebookfull join linkedinon facebook.email=linkedin.email;
+select facebook.*, linkedin.* from facebookleft join linkedinon facebook.email=linkedin.email;
