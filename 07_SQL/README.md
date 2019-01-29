@@ -56,3 +56,54 @@ masterdc=# UPDATE facebook SET phone='+34111222333';
 masterdc=# UPDATE facebook SET username= email;
 ```
 
+### Importing data
+```sh       
+masterdc=# \! wget https://raw.githubusercontent.com/masterdatascience/postgres/master/my_fb_friends.csv
+masterdc=# \! wget https://raw.githubusercontent.com/masterdatascience/postgres/master/my_ldin_contacts.csv
+```
+### Renaming table 
+```sh       
+masterdc=# ALTER TABLE facebook RENAME TO old_facebook;
+```
+### Copy table (choosing the columns) to another table
+```sh       
+masterdc=# CREATE TABLE facebook AS SELECT name,age,city,email FROM old_facebook;
+```
+### Copy a csv (delimeter ^) to a table
+```sh       
+masterdc=# \copy facebook from './my_fb_friends.csv' delimiter '^' csv header;
+```
+![Figure 1-4](https://github.com/emunozlorenzo/MasterDataScience/blob/master/07_SQL/Img/image4.png "Figure 1-4")
+
+### Alias
+- Alias is used to chage momentarely the name of something, during a query
+- Alias is specified with AS
+```sh       
+masterdc=# SELECT *, (age*2) as doub_edad from facebook where (age*2)>49;
+masterdc=# SELECT * FROM facebook AS t WHERE t.city = 'Valencia';
+```
+![Figure 1-5](https://github.com/emunozlorenzo/MasterDataScience/blob/master/07_SQL/Img/image5.png "Figure 1-5")
+
+### Removing the duplicates
+Cities present in Facebook table:
+```sh       
+masterdc=# SELECT DISTINCT residencia FROM facebook;
+```
+### Sorting the results
+When we launch a query the order of the obtained results is not guaranteed!
+
+We can define the order by using order by.
+
+*From lowest to highest:*
+```sh       
+masterdc=# SELECT * FROM facebook ORDER BY age;
+```
+*From highest to lowest:*
+```sh       
+masterdc=# SELECT * FROM facebook ORDER BY age DESC;
+```
+### Sorting by multiples options
+```sh       
+masterdc=# SELECT * FROM facebook ORDER BY age, name;
+masterdc=# SELECT * FROM facebook ORDER BY age DESC, name ASC;
+```
