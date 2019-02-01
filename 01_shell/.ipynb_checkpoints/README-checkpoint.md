@@ -8,4 +8,3 @@
 - [Working with compressed files](https://github.com/emunozlorenzo/MasterDataScience/blob/master/01_shell/04_shell_CompressedFiles.md) - tar, gz, bz2
 - [CSV toolkit](https://github.com/emunozlorenzo/MasterDataScience/blob/master/01_shell/05_shell_CSVtoolkit.md)
 - and more...
-
