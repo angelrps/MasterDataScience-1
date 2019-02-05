@@ -4,13 +4,17 @@ Based on Machine Learning Practices by [Kevin Markham](https://github.com/justma
 
 ## What is Machine Learning?
 
-Machine learning is the semi-automated extraction of knowledge from data
+Machine learning is the semi-automated extraction of knowledge from data.
 
 [The Learning Problem - Introduction; supervised, unsupervised, and reinforcement learning. Components of the learning problem. Lecture 1 of 18 of Caltech's Machine Learning Course - CS 156 by Professor Yaser Abu-Mostafa](https://www.youtube.com/watch?time_continue=83&v=mbyG85GZ0PI)
 
 [Video and Slides](http://work.caltech.edu/library/014.html)
 
+[Understanding the Bias-Variance Tradeoff](http://scott.fortmann-roe.com/docs/BiasVariance.html) - To understand error due to Bias or variance and avoid the mistake of OVERFITTING or UNDERFITTING.
+
 ![alt text](https://github.com/emunozlorenzo/MasterDataScience/blob/master/06_Machine_Learning_on_my_own/Img/image.png "Logo Title Text 1")
+
+<img src="https://github.com/emunozlorenzo/MasterDataScience/blob/master/06_Machine_Learning_on_my_own/Img/image.png" alt="Drawing" style="width: 200px;"/>
 
 ## Types of Machine Learning Algorithms
 
