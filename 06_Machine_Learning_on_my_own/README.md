@@ -14,7 +14,7 @@ Machine learning is the semi-automated extraction of knowledge from data.
 
 ![alt text](https://github.com/emunozlorenzo/MasterDataScience/blob/master/06_Machine_Learning_on_my_own/Img/image.png "Logo Title Text 1")
 
-<img src="https://github.com/emunozlorenzo/MasterDataScience/blob/master/06_Machine_Learning_on_my_own/Img/image.png" alt="Drawing" style="width: 200px;"/>
+<img src="https://github.com/emunozlorenzo/MasterDataScience/blob/master/06_Machine_Learning_on_my_own/Img/image.png" alt="Drawing" style="width: 100px;"/>
 
 ## Types of Machine Learning Algorithms
 
