@@ -190,13 +190,13 @@ masterdc-# ON fb.email = ln.email;
 1. Import optd_aircraft.csv and optd_airlines.csv in postgres
 ( /Data/opentraveldata/)
 
-1.1 Execute in psql:
+    1.1 Execute in psql:
 
 ```sh
 masterdc=# CREATE DATABASE optd;
 ```
 
-1.2  Execute @shell inside ( ~/Data/opentraveldata/):
+    1.2  Execute @shell inside ( ~/Data/opentraveldata/):
 
 ```sh
 ~$ csvsql -d '^' optd_aircraft.csv -i postgresql > psql_create_optd_aircraft.txt 
@@ -205,7 +205,7 @@ masterdc=# CREATE DATABASE optd;
 ~$ psql -d optd -f psql_create_optd_airlines.txt 
 ```
 
-1.3 Execute in psql:
+    1.3 Execute in psql:
 
 ```sh
 optd=# \cd ~/Data/opentraveldata/
@@ -213,7 +213,7 @@ optd=# \copy optd_aircraft from './optd_aircraft.csv' delimiter '^' csv header;
 optd=# \copy optd_airlines from './optd_airlines.csv' delimiter '^' csv header;
 ```
 
-2. Whichairplanehas thehighestnumberof engines?
+2. Which airplane has the highest number of engines?
 (optd_aircraft)
 
 ```sh
