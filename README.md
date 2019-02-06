@@ -1,4 +1,4 @@
-![alt text](https://github.com/emunozlorenzo/MasterDataScience/blob/master/img/image.png "Logo Title Text 1"){.center}
+->![alt text](https://github.com/emunozlorenzo/MasterDataScience/blob/master/img/image.png "Logo Title Text 1")<-
 
 ![alt text](https://github.com/emunozlorenzo/MasterDataScience/blob/master/img/image.png "Logo Title Text 1")   {.center}
 # Master Data Science 2018
