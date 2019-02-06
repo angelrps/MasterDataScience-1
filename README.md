@@ -1,5 +1,5 @@
 <p align="center"> 
-<img src="https://github.com/emunozlorenzo/MasterDataScience/blob/master/img/image2.jpg">
+<img src="https://github.com/emunozlorenzo/MasterDataScience/blob/master/img/image2.png">
 </p>
 
 # Master Data Science 2018
