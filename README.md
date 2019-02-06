@@ -1,7 +1,7 @@
 # Master Data Science 2018
 Master in Data Science - [KSchool](https://kschool.com/cursos/master-en-data-science-madrid/)
 
-About Me: ![alt text](https://github.com/emunozlorenzo/MasterDataScience/blob/master/img/icon.png "Logo Title Text 1") [Eduardo Muñoz](https://www.linkedin.com/in/eduardo-mu%C3%B1oz-lorenzo-14144a144/)
+![alt text](https://github.com/emunozlorenzo/MasterDataScience/blob/master/img/icon2.png "Logo Title Text 1") [Eduardo Muñoz](https://www.linkedin.com/in/eduardo-mu%C3%B1oz-lorenzo-14144a144/)
 
 ## Repository Description
 The following repository contains all the exercises done during the master which are focusing on 
