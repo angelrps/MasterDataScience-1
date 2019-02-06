@@ -209,8 +209,8 @@ masterdc=# CREATE DATABASE optd;
 
 ```sh
 optd=# \cd ~/Data/opentraveldata/
-masterdc=# \copy optd_aircraft from './optd_aircraft.csv' delimiter '^' csv header;
-masterdc=# \copy optd_airlines from './optd_airlines.csv' delimiter '^' csv header;
+optd=# \copy optd_aircraft from './optd_aircraft.csv' delimiter '^' csv header;
+optd=# \copy optd_airlines from './optd_airlines.csv' delimiter '^' csv header;
 ```
 
 2. Whichairplanehas thehighestnumberof engines?
