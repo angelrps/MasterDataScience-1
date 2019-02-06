@@ -1,7 +1,3 @@
-->![alt text](https://github.com/emunozlorenzo/MasterDataScience/blob/master/img/image.png "Logo Title Text 1")<-
-
-![alt text](https://github.com/emunozlorenzo/MasterDataScience/blob/master/img/image.png "Logo Title Text 1")   {.center}
-
 <p align="center"> 
 <img src="https://github.com/emunozlorenzo/MasterDataScience/blob/master/img/image.png">
 </p>
