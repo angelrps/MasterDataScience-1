@@ -1,4 +1,4 @@
-![alt text](https://github.com/emunozlorenzo/MasterDataScience/blob/master/img/image.png =x20)
+![alt text](https://github.com/emunozlorenzo/MasterDataScience/blob/master/img/image.png "Logo Title Text 1")
 # Master Data Science 2018
 Master in Data Science - [KSchool](https://kschool.com/cursos/master-en-data-science-madrid/)
 
