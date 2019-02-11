@@ -44,6 +44,9 @@ developing all the skills to be a Data Scientist. The main goal of this master i
 5. [Pandas on my own](https://github.com/emunozlorenzo/MasterDataScience/tree/master/05_Pandas_on_my_own)
 6. [Machine Learning on my own](https://github.com/emunozlorenzo/MasterDataScience/tree/master/06_Machine_Learning_on_my_own)
 7. [SQL](https://github.com/emunozlorenzo/MasterDataScience/tree/master/07_SQL)
+8. [R Fundamentals](https://github.com/emunozlorenzo/MasterDataScience/tree/master/08_R)
+9. [Modelling Methodologies](https://github.com/emunozlorenzo/MasterDataScience/blob/master/09_Modelling_Methodologies/modeladov2.pdf)
+
 
 
 
