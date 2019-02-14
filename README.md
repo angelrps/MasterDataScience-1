@@ -30,6 +30,7 @@ developing all the skills to be a Data Scientist. The main goal of this master i
 	- Geopandas
 	- Folium
 	- Bokeh
+    - BeautifulSoup (Web Scraping)
 - R
 - Natural Language Processing (NLP)
 - Spark
@@ -46,6 +47,7 @@ developing all the skills to be a Data Scientist. The main goal of this master i
 7. [SQL](https://github.com/emunozlorenzo/MasterDataScience/tree/master/07_SQL)
 8. [R Fundamentals](https://github.com/emunozlorenzo/MasterDataScience/tree/master/08_R)
 9. [Modelling Methodologies](https://github.com/emunozlorenzo/MasterDataScience/blob/master/09_Modelling_Methodologies/modeladov2.pdf)
+10. [Web Scraping](https://github.com/emunozlorenzo/MasterDataScience/tree/master/10_Web_Scraping)
 
 
 
