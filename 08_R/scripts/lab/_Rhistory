@@ -1,0 +1,416 @@
+rm(list=ls())
+gc()
+install.packages("xlsx")
+library(dplyr)
+library(magrittr)
+library(lubridate)
+library(ggplot2)
+library(tidyr)
+library(reshape2)
+library(xlsx)
+ipc<- read.xlsx(file="C:/Users/rparrilla/Desktop/PRACTICAS AFI/IPC provincias/10023 (2).xlsx",
+header=TRUE,stringsAsFactors = F)
+ipc<- read.xlsx(file="C:/Users/rparrilla/Desktop/PRACTICAS AFI/IPC provincias/10023 (2).xlsx",
+sheetIndex=1 , header=TRUE,stringsAsFactors = F)
+library(xl)
+install.packages(readxl)
+install.packages("readxl")
+library(xl)
+library(readxl)
+ipc_prov<- read_excel("C:/Users/rparrilla/Desktop/PRACTICAS AFI/IPC provincias/10023 (2).xlsx",
+col_names = TRUE)
+View(ipc_prov)
+library(dplyr)
+library(magrittr)
+library(lubridate)
+library(data.table)
+trf <- read.csv(file="C:/Users/rparrilla/Desktop/PRACTICAS AFI/TRAFICO/06-2016/06-2016.csv",
+head=TRUE,sep=";",stringsAsFactors = F)
+trf<- data.table(trf)
+tr<- trf[fecha!=" ", .(idelem, fecha, intensidad, ocupacion,carga)]
+trafico <- tr[ , fecha1:= as_datetime(fecha)]
+pioneers <- c("GAUSS:1777", "BAYES:1702", "PASCAL:1623", "PEARSON:1857")
+split_math <- strsplit(pioneers, ":")
+split_math
+split_low <- lapply(split_math, tolower)
+str(split_low)
+select_first <- function(x) {
+x[1]
+}
+names <- lapply(split_low, select_first)
+names
+select_second <- function(x) {
+x[2]
+}
+years <- lapply(split_low, select_second)
+names <- lapply(split_low, function(x) { x[1] })
+years <- lapply(split_low, function(x) { x[2] })
+select_el <- function(x, el) {
+x[el]
+}
+names <- lapply(split_low, select_el, el = 1)
+years <- lapply(split_low, select_el, el = 2)
+lapply(split_low, function(x) {
+if (nchar(x[1]) > 5) {
+return(NULL)
+} else {
+return(x[2])
+}
+})
+temp <- list(monday = c(3, 7, 9, 6, -1),
+tuesday = c(6, 9, 12, 13, 5),
+wednesday = c(4, 8, 3, -1, -3),
+thursday = c(1, 4, 7, 2, -2),
+friday = c(5, 7, 9, 4, 2),
+saturday = c(-3, 5, 8, 9, 4),
+sunday = c(3, 6, 9, 4, 1))
+str(temp)
+# Utiliza lapply para encontrar la temeperatura mÃ�nima de cada dÃ�a
+lapply(temp, max)
+sapply(temp,macx)
+lapply(temp, min)
+# Utiliza sapply para encontrar la temeperatura mÃ�nima de cada dÃ�a
+sapply(temp,min)
+extremes_avg <- function(x) {
+max(x)-min(x)
+}
+# Aplica la nueva funciÃ³n utilizando sapply
+sapply(temp, extremes_avg)
+extremes <- function(x) {
+c(min(x),max(x))
+}
+sapply(temp, extremes)
+# Aplica la nueva funciÃ³n utilizando lapply
+lapply(temp, extremes)
+extremes_avg <- function(x) {
+avg(max(x),min(x))
+}
+# Aplica la nueva funciÃ³n utilizando sapply
+sapply(temp, extremes_avg)
+# Aplica la nueva funciÃ³n utilizando lapply
+lapply(temp, extremes_avg)
+extremes_avg <- function(x) {
+avg(max(x),min(x))
+}
+sapply(temp, extremes_avg)
+extremes_avg <- function(x) {
+mean(max(x),min(x))
+}
+# Aplica la nueva funciÃ³n utilizando sapply
+sapply(temp, extremes_avg)
+# Aplica la nueva funciÃ³n utilizando lapply
+lapply(temp, extremes_avg)
+extremes_avg <- function(x) {
+mean(max(x),min(x))
+}
+# Aplica la nueva funciÃ³n utilizando sapply
+sapply(temp, extremes_avg)
+# Aplica la nueva funciÃ³n utilizando lapply
+lapply(temp, extremes_avg)
+monday
+below_zero <- function(x) {
+x(x<0)
+}
+# Aplica la nueva funciÃ³n utilizando sapply y guardarla en freezing_s
+freezing_s <- sapply(temp, below_zero)
+monday = c(3, 7, 9, 6, -1)
+monday = c(3, 7, 9, 6, -1)
+extremes_avg(monday)
+max(monday)
+mean(max(monday),min(monday))
+monday = c(3, 7, 9, 6, -1)
+(max(monday)+min(monday))/2
+extremes_avg <- function(x) {
+(max(x)+min(x))/2
+}
+# Aplica la nueva funciÃ³n utilizando sapply
+sapply(temp, extremes_avg)
+# Aplica la nueva funciÃ³n utilizando lapply
+lapply(temp, extremes_avg)
+below_zero <- function(x) {
+x(x<0)
+}
+below_zero <- function(x) {
+for(i in x)
+i(i<0)
+}
+# Aplica la nueva funciÃ³n utilizando sapply y guardarla en freezing_s
+freezing_s <- sapply(temp, below_zero)
+below_zero <- function(x) {
+for(i in x)
+i(i<0)
+}
+# Aplica la nueva funciÃ³n utilizando sapply y guardarla en freezing_s
+freezing_s <- sapply(temp, below_zero)
+below_zero <- function(x) {
+for(i in x){
+i(i<0)}
+}
+freezing_s <- sapply(temp, below_zero)
+monday
+monday<0
+monday(monday<0)
+monday[monday<0]
+below_zero <- function(x) {
+for(i in x){
+i[i<0]}
+}
+# Aplica la nueva funciÃ³n utilizando sapply y guardarla en freezing_s
+freezing_s <- sapply(temp, below_zero)
+freezing_s
+for(i in temp){
+i[i<0]}
+t<- for(i in temp){
+i[i<0]}
+t
+# Crea una funciÃ³n que devuelva los siguiente: cat("The average temperature is", mean(x), "\n")
+print_info <- funcion(x){
+cat("the average temperature is ", mean(X), "\n")
+}
+# Crea una funciÃ³n que devuelva los siguiente: cat("The average temperature is", mean(x), "\n")
+print_info <- funcion(x){
+cat("the average temperature is ", mean(x), "\n")
+}
+# Crea una funciÃ³n que devuelva los siguiente: cat("The average temperature is", mean(x), "\n")
+print_info <- function(x){
+cat("The average temperature is ", mean(x), "\n")
+}
+# Aplica la nueva funciÃ³n utilizando lapply
+print_info(temp, lapply)
+# Aplica la nueva funciÃ³n utilizando sapply
+print_info(temp, sapply)
+print_info <- function(x){
+cat("The average temperature is ", mean(x), "\n")
+}
+# Aplica la nueva funciÃ³n utilizando lapply
+lapply(temp, print_info)
+# Aplica la nueva funciÃ³n utilizando sapply
+sapply(temp, print_info)
+sapply(temp, max)
+# Crea una funciÃ³n extremes_avg que calcula la media entre el dÃ�a mÃ�nimo y el dÃ�a mÃ¡ximo
+extremes_avg <- function(x) {
+mean(c((max(x),min(x))))
+}
+# Aplica la nueva funciÃ³n utilizando sapply
+sapply(temp, extremes_avg)
+below_zero <- function(x) {
+x[x<0]}
+}
+# Aplica la nueva funciÃ³n utilizando sapply y guardarla en freezing_s
+freezing_s <- sapply(temp, below_zero)
+freezing_s
+?cat
+print_info <- function(x){
+cat("The average temperature is ", mean(x), "\n")
+}
+# Aplica la nueva funciÃ³n utilizando lapply
+lapply(temp, print_info)
+sapply(temp, print_info)
+freezing_s == freezing_l
+freezing_s <- sapply(temp, below_zero)
+# Aplica la nueva funciÃ³n utilizando lapply y guardarla en freezing_l
+freezing_l <- lapply(temp, below_zero)
+# Compara freezing_s y freezing_l con identical
+freezing_s == freezing_l
+basics<- function(x){
+c(min(x),mean(x),max(x))
+}
+vapply(temp,basics,numeric(1))
+# Usando vapply aplica la funciÃ³n basics
+vapply(temp,basics,numeric(3))
+basics <- function(x) {
+c(min = min(x), mean = mean(x), median = median(x), max = max(x))
+}
+vapply(temp, basics, numeric(3))
+# Arregla el error:
+vapply(temp, basics, numeric(4))
+# Convierte este sapply en un vapply
+vapply(temp, max,numeric(1))
+# Convierte este sapply en un vapply
+vapply(temp, function(x, y) { mean(x) > y }, y = 5, logical(1))
+get_info <- function(x, y) {
+if (mean(x) > y) {
+return("Not too cold!")
+} else {
+return("Pretty cold!")
+}
+}
+sapply(temp, get_info, y = 5)
+# Convierte este sapply en un vapply
+vapply(temp, get_info, y = 5, character(13))
+# Convierte este sapply en un vapply
+vapply(temp, get_info, y = 5, character(1))
+?rbind
+rm(list = ls())
+gc()
+# library(...)
+library(dplyr)
+library(magrittr)
+library(lubridate)
+library(ggplot2)
+library(tidyr)
+library(reshape2)
+library(readxl)
+library(jsonlite)
+json<- fromJSON("C:/Users/rparrilla/Desktop/PRACTICAS AFI/IPC provincias/espProvinciasGeo.json",
+simplifyDataFrame = TRUE, flatten=TRUE)
+j<- do.call("rbind", json)
+rm(list = ls())
+gc()
+# library(...)
+library(dplyr)
+library(magrittr)
+library(lubridate)
+library(ggplot2)
+library(tidyr)
+library(reshape2)
+library(readxl)
+library(jsonlite)
+json<- fromJSON("C:/Users/rparrilla/Desktop/PRACTICAS AFI/IPC provincias/espProvinciasGeo.json",
+simplifyDataFrame = TRUE, flatten=TRUE)
+j<- do.call(rbind, json)
+rm(list = ls())
+gc()
+# library(...)
+library(dplyr)
+library(magrittr)
+library(lubridate)
+library(ggplot2)
+library(tidyr)
+library(reshape2)
+library(readxl)
+library(jsonlite)
+json<- fromJSON("C:/Users/rparrilla/Desktop/PRACTICAS AFI/IPC provincias/espProvinciasGeo.json",
+simplifyDataFrame = TRUE, flatten=TRUE)
+j<- do.call("rbind", json)
+rm(list = ls())
+gc()
+# library(...)
+library(dplyr)
+library(magrittr)
+library(lubridate)
+library(ggplot2)
+library(tidyr)
+library(reshape2)
+library(readxl)
+library(jsonlite)
+json<- fromJSON("C:/Users/rparrilla/Desktop/PRACTICAS AFI/IPC provincias/espProvinciasGeo.json",
+simplifyDataFrame = TRUE, flatten=TRUE)
+j<- do.call(rbind, json)
+View(j)
+?grepl
+setwd("C:/Users/rparrilla/Google Drive/MÁSTER/MODULO I/Programación para Data Science y Big Data/MDS_2016_2017_Programación_en_R/Lab")
+# Con read.table
+mun_csv_1 <- read.table("dat/municipios1.csv",
+header = TRUE,
+sep = ",",
+stringsAsFactors = FALSE)
+install.packages('readr')
+# Con readr
+library(readr)
+mun_csv_3 <- read_delim("dat/municipios1.csv",
+delim = ",",
+col_types = "ci") #c: characters, d: double, i: integer, l: logical, _: ignore
+str(mun_csv_3)
+# Con fread
+library(data.table)
+install.packages('data.table')
+install.packages("data.table")
+mun_csv_4 <- fread("dat/municipios1.csv")
+library(readxl)
+excel_sheets("dat/municipios.xlsx")
+mun_xlsx <- read_excel("dat/municipios.xlsx")
+library(tidyr)
+# Arregla el siguiente data frame
+people_1 <- data.frame(name = c("Jake", "Alice", "Tim", "Denise"),
+age = c(34, 55, 76, 19),
+brown = c(0, 0, 1, 0),
+blue = c(0, 1, 0, 0),
+other = c(1, 0, 0, 1),
+height = c(6.1, 5.9, 5.7, 5.1))
+# Arregla el siguiente data frame
+people_2 <- data.frame(name = c("Jake", "Jake", "Jake", "Alice", "Alice", "Alice"),
+measurement = c("n_dog", "n_cats", "n_birds", "n_dog", "n_cats", "n_birds"),
+value = c(1, 0, 1, 1, 2, 0))
+View(people_2)
+spread(peolple_2, measurement, value)
+spread(peolple_2,my_key= measurement, my_val=value)
+spread(people_2,my_key= measurement, my_val=value)
+spread(people_2, measurement,value)
+# Arregla el siguiente data frame
+people_3 <- data.frame(name = c("Jake", "Alice", "Tim", "Denise"),
+sex_age = c("M:34", "F:55", "M:76", "F:19"),
+eye_color = c("other", "blue", "brown", "other"),
+height = c(6.1, 5.9, 5.7, 5.1))
+View(people_3)
+separate(people_3, sex_age, into=c("sex","age"))
+# Consigue el data frame original del Ãºltimo arreglo
+people_3<- unite(p3, sex, age, sep=":")
+p3<-separate(people_3, sex_age, into=c("sex","age"))
+# Consigue el data frame original del Ãºltimo arreglo
+people_3<- unite(p3, sex, age, sep=":")
+people_3
+people_3
+# Arregla el siguiente data frame
+people_1 <- data.frame(name = c("Jake", "Alice", "Tim", "Denise"),
+age = c(34, 55, 76, 19),
+brown = c(0, 0, 1, 0),
+blue = c(0, 1, 0, 0),
+other = c(1, 0, 0, 1),
+height = c(6.1, 5.9, 5.7, 5.1))
+View(people_1)
+gather(people_1, my_key, my_val,-name)
+gather(people_1, my_key, my_val,-name,-age,-height)
+gather(people_1,eye_col= my_key, my_val,-name,-age,-height)
+gather(people_1, my_key=eye_col, my_val,-name,-age,-height)
+gather(people_1, my_key
+gather(people_1, my_key, my_val,-name,-age,-height)
+gather(people_1, my_key, my_val)
+gather(people_1, my_key, my_val,-name,-age,-height)
+people_1
+p1<-gather(people_1, my_key, my_val,-name,-age,-height)
+filter(p1,my_val!=0)
+p1<-gather(people_1, my_key, my_val,-name,-age,-height)
+p1<-filter(p1,my_val!=0)
+p1<- select(-my_val)
+p1<-gather(people_1, my_key, my_val,-name,-age,-height)
+p1<-filter(p1,my_val!=0)
+p1<- select(p1,-my_val)
+p1
+p1[1,]
+1<-gather(people_1, my_key, my_val,-name,-age,-height)
+p1[(my_val!=0),]
+p1<-gather(people_1, my_key, my_val,-name,-age,-height)
+p1[(my_val!=0),]
+# Arregla el siguiente data frame
+people_1 <- data.frame(name = c("Jake", "Alice", "Tim", "Denise"),
+age = c(34, 55, 76, 19),
+brown = c(0, 0, 1, 0),
+blue = c(0, 1, 0, 0),
+other = c(1, 0, 0, 1),
+height = c(6.1, 5.9, 5.7, 5.1))
+p1<-gather(people_1, my_key, my_val,-name,-age,-height)
+p1[(my_val!=0),]
+p1<-gather(people_1, my_key, my_val,-name,-age,-height)
+p1[(p1$my_val!=0),]
+p1<-gather(people_1, my_key, my_val,-name,-age,-height)
+p1[(p1$my_val!=0),]
+p1[,-my_val]
+p1<-gather(people_1, my_key, my_val,-name,-age,-height)
+p1[(p1$my_val!=0),]
+p1[,-p1$my_val]
+p1<-gather(people_1, my_key, my_val,-name,-age,-height)
+p<-p1[(p1$my_val!=0),]
+p[,-p$my_val]
+p1<-gather(people_1, my_key, my_val,-name,-age,-height)
+p<-p1[(p1$my_val!=0),]
+p[,-(p$my_val)]
+p1<-gather(people_1, my_key, my_val,-name,-age,-height)
+p<-p1[(p1$my_val!=0),]
+p[,-4]
+p1<-gather(people_1, my_key, my_val,-name,-age,-height)
+p<-p1[(p1$my_val!=0),]
+p[,-5]
+p1<-gather(people_1, eye_colort, my_val,-name,-age,-height)
+p<-p1[(p1$my_val!=0),-5]
+p

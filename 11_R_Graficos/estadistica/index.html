@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Estadística básica con R</title>
+  <meta name="description" content="Estadística básica con R">
+  <meta name="generator" content="bookdown  and GitBook 2.6.7">
+
+  <meta property="og:title" content="Estadística básica con R" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Estadística básica con R" />
+  
+  
+  
+
+<meta name="author" content="Olivier Nuñez">
+
+
+<meta name="date" content="2019-02-22">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+
+<link rel="next" href="muestreo.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; background-color: #ffffff; color: #1f1c1b; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; background-color: #ffffff; color: #a0a0a0; border-right: 1px solid #a0a0a0; }
+td.sourceCode { padding-left: 5px; }
+pre, code { color: #1f1c1b; background-color: #ffffff; }
+code > span.kw { color: #1f1c1b; font-weight: bold; } /* Keyword */
+code > span.dt { color: #0057ae; } /* DataType */
+code > span.dv { color: #b08000; } /* DecVal */
+code > span.bn { color: #b08000; } /* BaseN */
+code > span.fl { color: #b08000; } /* Float */
+code > span.cn { color: #aa5500; } /* Constant */
+code > span.ch { color: #924c9d; } /* Char */
+code > span.sc { color: #3daee9; } /* SpecialChar */
+code > span.st { color: #bf0303; } /* String */
+code > span.vs { color: #bf0303; } /* VerbatimString */
+code > span.ss { color: #ff5500; } /* SpecialString */
+code > span.im { color: #ff5500; } /* Import */
+code > span.co { color: #898887; } /* Comment */
+code > span.do { color: #607880; } /* Documentation */
+code > span.an { color: #ca60ca; } /* Annotation */
+code > span.cv { color: #0095ff; } /* CommentVar */
+code > span.ot { color: #006e28; } /* Other */
+code > span.fu { color: #644a9b; } /* Function */
+code > span.va { color: #0057ae; } /* Variable */
+code > span.cf { color: #1f1c1b; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #1f1c1b; } /* Operator */
+code > span.bu { color: #644a9b; font-weight: bold; } /* BuiltIn */
+code > span.ex { color: #0095ff; font-weight: bold; } /* Extension */
+code > span.pp { color: #006e28; } /* Preprocessor */
+code > span.at { color: #0057ae; } /* Attribute */
+code > span.re { color: #0057ae; } /* RegionMarker */
+code > span.in { color: #b08000; } /* Information */
+code > span.wa { color: #bf0303; } /* Warning */
+code > span.al { color: #bf0303; font-weight: bold; } /* Alert */
+code > span.er { color: #bf0303; text-decoration: underline; } /* Error */
+code > span. { color: #1f1c1b; } /* Normal */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Preámbulo</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#estadistica-descriptiva-versus-estadistica-inferencial"><i class="fa fa-check"></i>Estadística descriptiva versus Estadística Inferencial</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#error-en-la-decision"><i class="fa fa-check"></i>Error en la decisión</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="muestreo.html"><a href="muestreo.html"><i class="fa fa-check"></i><b>2</b> Muestreo</a><ul>
+<li class="chapter" data-level="" data-path="muestreo.html"><a href="muestreo.html#aplicaciones"><i class="fa fa-check"></i>Aplicaciones</a></li>
+<li class="chapter" data-level="" data-path="muestreo.html"><a href="muestreo.html#que-es-el-muestreo"><i class="fa fa-check"></i>¿Qué es el muestreo?</a></li>
+<li class="chapter" data-level="" data-path="muestreo.html"><a href="muestreo.html#objetivo-del-muestreo"><i class="fa fa-check"></i>Objetivo del muestreo</a></li>
+<li class="chapter" data-level="" data-path="muestreo.html"><a href="muestreo.html#error-muestral"><i class="fa fa-check"></i>Error muestral</a></li>
+<li class="chapter" data-level="" data-path="muestreo.html"><a href="muestreo.html#error-sistematico"><i class="fa fa-check"></i>Error sistemático</a></li>
+<li class="chapter" data-level="" data-path="muestreo.html"><a href="muestreo.html#muestreo-aleatorio-simple"><i class="fa fa-check"></i>Muestreo aleatorio simple</a><ul>
+<li class="chapter" data-level="" data-path="muestreo.html"><a href="muestreo.html#implementacion"><i class="fa fa-check"></i>Implementación</a></li>
+<li class="chapter" data-level="" data-path="muestreo.html"><a href="muestreo.html#ventajas-y-limitaciones"><i class="fa fa-check"></i>Ventajas y limitaciones</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="muestreo.html"><a href="muestreo.html#muestreo-estratificado"><i class="fa fa-check"></i>Muestreo estratificado</a></li>
+<li class="chapter" data-level="" data-path="muestreo.html"><a href="muestreo.html#muestreo-de-una-poblacion-teorica"><i class="fa fa-check"></i>Muestreo de una población teorica</a><ul>
+<li class="chapter" data-level="" data-path="muestreo.html"><a href="muestreo.html#distribucion-binomial"><i class="fa fa-check"></i>Distribución Binomial</a></li>
+<li class="chapter" data-level="" data-path="muestreo.html"><a href="muestreo.html#distribucion-normal"><i class="fa fa-check"></i>Distribución Normal</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="inferencia-sobre-medias.html"><a href="inferencia-sobre-medias.html"><i class="fa fa-check"></i><b>3</b> Inferencia sobre medias</a><ul>
+<li class="chapter" data-level="" data-path="inferencia-sobre-medias.html"><a href="inferencia-sobre-medias.html#test-sobre-una-media"><i class="fa fa-check"></i>Test sobre una media</a><ul>
+<li class="chapter" data-level="" data-path="inferencia-sobre-medias.html"><a href="inferencia-sobre-medias.html#planteamiento"><i class="fa fa-check"></i>Planteamiento</a></li>
+<li class="chapter" data-level="" data-path="inferencia-sobre-medias.html"><a href="inferencia-sobre-medias.html#teorema-central-del-limite"><i class="fa fa-check"></i>Teorema central del limite</a></li>
+<li class="chapter" data-level="" data-path="inferencia-sobre-medias.html"><a href="inferencia-sobre-medias.html#una-horquilla-para-la-media-poblacional"><i class="fa fa-check"></i>Una horquilla para la media poblacional</a></li>
+<li class="chapter" data-level="" data-path="inferencia-sobre-medias.html"><a href="inferencia-sobre-medias.html#test-de-student"><i class="fa fa-check"></i>Test de Student</a></li>
+<li class="chapter" data-level="" data-path="inferencia-sobre-medias.html"><a href="inferencia-sobre-medias.html#el-p-valor"><i class="fa fa-check"></i>El p-valor</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="inferencia-sobre-medias.html"><a href="inferencia-sobre-medias.html#comparando-medias"><i class="fa fa-check"></i>Comparando medias</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Estadística básica con R</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="header">
+<h1 class="title">Estadística básica con R</h1>
+<p class="author"><em>Olivier Nuñez</em></p>
+<p class="date"><em>2019-02-22</em></p>
+</div>
+<div id="preambulo" class="section level1">
+<h1><span class="header-section-number">1</span> Preámbulo</h1>
+<div id="estadistica-descriptiva-versus-estadistica-inferencial" class="section level2 unnumbered">
+<h2>Estadística descriptiva versus Estadística Inferencial</h2>
+<ul>
+<li><p>La <em>Estadística descriptiva</em> aporta las técnicas para resumir y presentar la información incluida en una muestra.</p></li>
+<li><p>Sin embargo, rara vez nos interesa la muestra como tal, sino que interesa por su capacidad para aportar información acerca de una situación más general (el conjunto de la población) o nueva (futuro).</p></li>
+<li><p>La <em>Estadística Inferencial</em> aporta las técnicas para evaluar el error de una decisión/predicción sacada a partir de una muestra.</p></li>
+</ul>
+</div>
+<div id="error-en-la-decision" class="section level2 unnumbered">
+<h2>Error en la decisión</h2>
+<p>se puede distinguir dos tipos de errores en una decisión tomada a partir de una muestra:</p>
+<ol style="list-style-type: decimal">
+<li><p>El <strong>error sitemático</strong> (o de diseño), debido a una falta de representatividad de la muestra.</p></li>
+<li><p>El <strong>error muestral</strong> que corresponde a la variabilidad de la decisión de una muestra a otra.</p></li>
+</ol>
+<p>A continuación veremos mediante <em>tecnicas de muestreo</em> como conseguir evitar el primer error y como evaluar el segundo error en la <em>inferencia sobre medias</em>.</p>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+
+<a href="muestreo.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": false,
+"twitter": false,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": ["EstadisticaR.pdf"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

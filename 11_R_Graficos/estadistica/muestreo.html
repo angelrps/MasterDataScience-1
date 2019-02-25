@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>2 Muestreo | Estadística básica con R</title>
+  <meta name="description" content="2 Muestreo | Estadística básica con R">
+  <meta name="generator" content="bookdown  and GitBook 2.6.7">
+
+  <meta property="og:title" content="2 Muestreo | Estadística básica con R" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="2 Muestreo | Estadística básica con R" />
+  
+  
+  
+
+<meta name="author" content="Olivier Nuñez">
+
+
+<meta name="date" content="2019-02-22">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="index.html">
+<link rel="next" href="inferencia-sobre-medias.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; background-color: #ffffff; color: #1f1c1b; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; background-color: #ffffff; color: #a0a0a0; border-right: 1px solid #a0a0a0; }
+td.sourceCode { padding-left: 5px; }
+pre, code { color: #1f1c1b; background-color: #ffffff; }
+code > span.kw { color: #1f1c1b; font-weight: bold; } /* Keyword */
+code > span.dt { color: #0057ae; } /* DataType */
+code > span.dv { color: #b08000; } /* DecVal */
+code > span.bn { color: #b08000; } /* BaseN */
+code > span.fl { color: #b08000; } /* Float */
+code > span.cn { color: #aa5500; } /* Constant */
+code > span.ch { color: #924c9d; } /* Char */
+code > span.sc { color: #3daee9; } /* SpecialChar */
+code > span.st { color: #bf0303; } /* String */
+code > span.vs { color: #bf0303; } /* VerbatimString */
+code > span.ss { color: #ff5500; } /* SpecialString */
+code > span.im { color: #ff5500; } /* Import */
+code > span.co { color: #898887; } /* Comment */
+code > span.do { color: #607880; } /* Documentation */
+code > span.an { color: #ca60ca; } /* Annotation */
+code > span.cv { color: #0095ff; } /* CommentVar */
+code > span.ot { color: #006e28; } /* Other */
+code > span.fu { color: #644a9b; } /* Function */
+code > span.va { color: #0057ae; } /* Variable */
+code > span.cf { color: #1f1c1b; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #1f1c1b; } /* Operator */
+code > span.bu { color: #644a9b; font-weight: bold; } /* BuiltIn */
+code > span.ex { color: #0095ff; font-weight: bold; } /* Extension */
+code > span.pp { color: #006e28; } /* Preprocessor */
+code > span.at { color: #0057ae; } /* Attribute */
+code > span.re { color: #0057ae; } /* RegionMarker */
+code > span.in { color: #b08000; } /* Information */
+code > span.wa { color: #bf0303; } /* Warning */
+code > span.al { color: #bf0303; font-weight: bold; } /* Alert */
+code > span.er { color: #bf0303; text-decoration: underline; } /* Error */
+code > span. { color: #1f1c1b; } /* Normal */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Preámbulo</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#estadistica-descriptiva-versus-estadistica-inferencial"><i class="fa fa-check"></i>Estadística descriptiva versus Estadística Inferencial</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#error-en-la-decision"><i class="fa fa-check"></i>Error en la decisión</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="muestreo.html"><a href="muestreo.html"><i class="fa fa-check"></i><b>2</b> Muestreo</a><ul>
+<li class="chapter" data-level="" data-path="muestreo.html"><a href="muestreo.html#aplicaciones"><i class="fa fa-check"></i>Aplicaciones</a></li>
+<li class="chapter" data-level="" data-path="muestreo.html"><a href="muestreo.html#que-es-el-muestreo"><i class="fa fa-check"></i>¿Qué es el muestreo?</a></li>
+<li class="chapter" data-level="" data-path="muestreo.html"><a href="muestreo.html#objetivo-del-muestreo"><i class="fa fa-check"></i>Objetivo del muestreo</a></li>
+<li class="chapter" data-level="" data-path="muestreo.html"><a href="muestreo.html#error-muestral"><i class="fa fa-check"></i>Error muestral</a></li>
+<li class="chapter" data-level="" data-path="muestreo.html"><a href="muestreo.html#error-sistematico"><i class="fa fa-check"></i>Error sistemático</a></li>
+<li class="chapter" data-level="" data-path="muestreo.html"><a href="muestreo.html#muestreo-aleatorio-simple"><i class="fa fa-check"></i>Muestreo aleatorio simple</a><ul>
+<li class="chapter" data-level="" data-path="muestreo.html"><a href="muestreo.html#implementacion"><i class="fa fa-check"></i>Implementación</a></li>
+<li class="chapter" data-level="" data-path="muestreo.html"><a href="muestreo.html#ventajas-y-limitaciones"><i class="fa fa-check"></i>Ventajas y limitaciones</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="muestreo.html"><a href="muestreo.html#muestreo-estratificado"><i class="fa fa-check"></i>Muestreo estratificado</a></li>
+<li class="chapter" data-level="" data-path="muestreo.html"><a href="muestreo.html#muestreo-de-una-poblacion-teorica"><i class="fa fa-check"></i>Muestreo de una población teorica</a><ul>
+<li class="chapter" data-level="" data-path="muestreo.html"><a href="muestreo.html#distribucion-binomial"><i class="fa fa-check"></i>Distribución Binomial</a></li>
+<li class="chapter" data-level="" data-path="muestreo.html"><a href="muestreo.html#distribucion-normal"><i class="fa fa-check"></i>Distribución Normal</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="inferencia-sobre-medias.html"><a href="inferencia-sobre-medias.html"><i class="fa fa-check"></i><b>3</b> Inferencia sobre medias</a><ul>
+<li class="chapter" data-level="" data-path="inferencia-sobre-medias.html"><a href="inferencia-sobre-medias.html#test-sobre-una-media"><i class="fa fa-check"></i>Test sobre una media</a><ul>
+<li class="chapter" data-level="" data-path="inferencia-sobre-medias.html"><a href="inferencia-sobre-medias.html#planteamiento"><i class="fa fa-check"></i>Planteamiento</a></li>
+<li class="chapter" data-level="" data-path="inferencia-sobre-medias.html"><a href="inferencia-sobre-medias.html#teorema-central-del-limite"><i class="fa fa-check"></i>Teorema central del limite</a></li>
+<li class="chapter" data-level="" data-path="inferencia-sobre-medias.html"><a href="inferencia-sobre-medias.html#una-horquilla-para-la-media-poblacional"><i class="fa fa-check"></i>Una horquilla para la media poblacional</a></li>
+<li class="chapter" data-level="" data-path="inferencia-sobre-medias.html"><a href="inferencia-sobre-medias.html#test-de-student"><i class="fa fa-check"></i>Test de Student</a></li>
+<li class="chapter" data-level="" data-path="inferencia-sobre-medias.html"><a href="inferencia-sobre-medias.html#el-p-valor"><i class="fa fa-check"></i>El p-valor</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="inferencia-sobre-medias.html"><a href="inferencia-sobre-medias.html#comparando-medias"><i class="fa fa-check"></i>Comparando medias</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Estadística básica con R</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="muestreo" class="section level1">
+<h1><span class="header-section-number">2</span> Muestreo</h1>
+<div id="aplicaciones" class="section level2 unnumbered">
+<h2>Aplicaciones</h2>
+<ul>
+<li><strong>Estudios observacionales</strong> (Muestreo versus Censo): en muchos casos, es demasiado caro y poco factible obtener datos de cada unidad de la población de estudio.</li>
+</ul>
+<!-- -->
+<ul>
+<li><strong>Evaluación del error</strong> (bootstrap, cross-validation): evaluación empírica de la precisión de los métodos de inferencia y predicción.</li>
+</ul>
+</div>
+<div id="que-es-el-muestreo" class="section level2 unnumbered">
+<h2>¿Qué es el muestreo?</h2>
+<p>Algunas definiciones:</p>
+<ul>
+<li><em>“Sampling consists of selecting some part of a population to observe so that one may estimate something about the whole population.”</em><br />
+(<strong>S. Thompson, 1992</strong>).</li>
+</ul>
+<!-- -->
+<ul>
+<li><em>“We are all accustomed to the idea of sampling in everyday life. The housewife visually samples the quality of the fruit she intends to buy. (...) If the greengrocer puts the best on display and sells us inferior qualities, we protest at the biased sample or change our supplier. (...) The notion of bias is not long the notion of sampling itself.”</em><br />
+(<strong>A. Stuart, 1983</strong>).</li>
+</ul>
+</div>
+<div id="objetivo-del-muestreo" class="section level2 unnumbered">
+<h2>Objetivo del muestreo</h2>
+<p><strong>La Representatividad</strong></p>
+<ul>
+<li>Evitar el sesgo de selección (exclusión sistema de parte de la población)</li>
+</ul>
+<!-- -->
+<ul>
+<li>Maximizar la representatividad (muestra = población a pequeña escala).</li>
+</ul>
+<!-- -->
+<ul>
+<li>Reducir los costes de recogida de datos.</li>
+</ul>
+<!-- -->
+<ul>
+<li>Controlar el <strong>error muestral</strong>.</li>
+</ul>
+</div>
+<div id="error-muestral" class="section level2 unnumbered">
+<h2>Error muestral</h2>
+<p><strong>Variación entre muestras</strong></p>
+<ul>
+<li>Es consecuencia de nuestra observación parcial de la población.</li>
+</ul>
+<!-- -->
+<ul>
+<li>Corresponde a la variación de las conclusiones entre muestras.</li>
+</ul>
+<!-- -->
+<ul>
+<li>Es un error de naturaleza aleatoria que decrece a medida que aumenta el tamaño muestral.</li>
+</ul>
+<!-- -->
+<ul>
+<li>No debe ser confundido con el <strong>sesgo</strong> (o <strong>error sistemático</strong>)</li>
+</ul>
+</div>
+<div id="error-sistematico" class="section level2 unnumbered">
+<h2>Error sistemático</h2>
+<p><strong>Sesgo de selección y de información</strong></p>
+<ul>
+<li>Distorsión en las conclusiones que ocurre de manera sistemática (afecta a todas la muestras).</li>
+</ul>
+<!-- -->
+<ul>
+<li><p>Se puede clasificar según el sesgo ocurre a nivel del muestreo o en la medición:</p>
+<ul>
+<li><strong>Sesgo de selección</strong>: ocurre cuando la selección de los individuos está condicionada por la característica que queremos medir.</li>
+</ul>
+<!-- -->
+<ul>
+<li><strong>Sesgo de información</strong>: sesgo que ocurre en la medición de la característica de interés. Sesgo de memoria, efecto del entrevistador o del cuestionario, .…</li>
+</ul></li>
+<li><p>Dos ejemplos de sesgo de selección:</p></li>
+</ul>
+<div class="figure">
+<img src="imagenes/MiceSquad.png" alt="No respuesta" height="113" />
+<p class="caption">No respuesta</p>
+</div>
+<div class="figure">
+<img src="imagenes/bombs.jpg" alt="Durante la Segunda Guerra Mundial, el estadístico Abraham Wald fue invitado a ayudar a los británicos a decidir dónde añadir armadura a sus bombarderos. Después de analizar los aviones que volvieron, recomendó reforzar los sitios donde no hubo impacto!" height="113" />
+<p class="caption">Durante la Segunda Guerra Mundial, el estadístico Abraham Wald fue invitado a ayudar a los británicos a decidir dónde añadir armadura a sus bombarderos. Después de analizar los aviones que volvieron, recomendó reforzar los sitios donde no hubo impacto!</p>
+</div>
+<ul>
+<li>Una selección <strong>aleatoria</strong> de las unidades permite evitar el sesgo de selección.</li>
+</ul>
+</div>
+<div id="muestreo-aleatorio-simple" class="section level2 unnumbered">
+<h2>Muestreo aleatorio simple</h2>
+<p>Es el diseño de muestreo más sencillo y se caracteriza por el hecho de que cada posible muestra de <span class="math inline">\(n\)</span> unidades tiene la misma probabilidad de ser seleccionada.</p>
+<div id="implementacion" class="section level3 unnumbered">
+<h3>Implementación</h3>
+<p>Se obtiene una muestra aleatoria simple de la siguiente manera:</p>
+<ol style="list-style-type: decimal">
+<li><p>Asignar un número de <span class="math inline">\(1\)</span> a <span class="math inline">\(N\)</span> a cada unidad de la población elegible.</p></li>
+<li><p>Elegir <span class="math inline">\(n\)</span> de estos números mediante el uso de algún proceso aleatorio (tablas o generador de números aleatorios)</p></li>
+<li><p>Las unidades correspondientes a los números elegidos se toman como muestra.</p></li>
+</ol>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">##### Implementación del muestero aleatorio simple en R ##### 
+state.name <span class="co"># la lista de estados americanos como Población</span></code></pre></div>
+<pre><code>##  [1] &quot;Alabama&quot;        &quot;Alaska&quot;         &quot;Arizona&quot;        &quot;Arkansas&quot;      
+##  [5] &quot;California&quot;     &quot;Colorado&quot;       &quot;Connecticut&quot;    &quot;Delaware&quot;      
+##  [9] &quot;Florida&quot;        &quot;Georgia&quot;        &quot;Hawaii&quot;         &quot;Idaho&quot;         
+## [13] &quot;Illinois&quot;       &quot;Indiana&quot;        &quot;Iowa&quot;           &quot;Kansas&quot;        
+## [17] &quot;Kentucky&quot;       &quot;Louisiana&quot;      &quot;Maine&quot;          &quot;Maryland&quot;      
+## [21] &quot;Massachusetts&quot;  &quot;Michigan&quot;       &quot;Minnesota&quot;      &quot;Mississippi&quot;   
+## [25] &quot;Missouri&quot;       &quot;Montana&quot;        &quot;Nebraska&quot;       &quot;Nevada&quot;        
+## [29] &quot;New Hampshire&quot;  &quot;New Jersey&quot;     &quot;New Mexico&quot;     &quot;New York&quot;      
+## [33] &quot;North Carolina&quot; &quot;North Dakota&quot;   &quot;Ohio&quot;           &quot;Oklahoma&quot;      
+## [37] &quot;Oregon&quot;         &quot;Pennsylvania&quot;   &quot;Rhode Island&quot;   &quot;South Carolina&quot;
+## [41] &quot;South Dakota&quot;   &quot;Tennessee&quot;      &quot;Texas&quot;          &quot;Utah&quot;          
+## [45] &quot;Vermont&quot;        &quot;Virginia&quot;       &quot;Washington&quot;     &quot;West Virginia&quot; 
+## [49] &quot;Wisconsin&quot;      &quot;Wyoming&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sample</span>(state.name,<span class="dt">size=</span><span class="dv">5</span>) <span class="co">#muestra aleatoria simple de 5 estados</span></code></pre></div>
+<pre><code>## [1] &quot;Idaho&quot;      &quot;Wisconsin&quot;  &quot;Delaware&quot;   &quot;New Mexico&quot; &quot;Missouri&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#sample(state.name,size=200) ## Error!!  </span>
+muestra=<span class="kw">sample</span>(state.name,<span class="dt">size=</span><span class="dv">200</span>,<span class="dt">replace=</span><span class="ot">TRUE</span>) <span class="co">#muestreo con reposición</span>
+<span class="kw">table</span>(muestra)</code></pre></div>
+<pre><code>## muestra
+##        Alabama         Alaska        Arizona       Arkansas     California 
+##              3              3              6              5              1 
+##       Colorado    Connecticut       Delaware        Florida        Georgia 
+##              2              3             11              3              3 
+##          Idaho       Illinois        Indiana           Iowa         Kansas 
+##              1              3              5              5              7 
+##       Kentucky      Louisiana          Maine       Maryland  Massachusetts 
+##              2              6              2              4              4 
+##       Michigan      Minnesota    Mississippi       Missouri        Montana 
+##              5              2              4              1              7 
+##       Nebraska         Nevada  New Hampshire     New Jersey     New Mexico 
+##              6              3              7              3              4 
+##       New York North Carolina   North Dakota           Ohio       Oklahoma 
+##              2              4              3              3              7 
+##         Oregon   Pennsylvania   Rhode Island South Carolina   South Dakota 
+##              2              5              6              2              5 
+##      Tennessee          Texas           Utah        Vermont       Virginia 
+##              8              3              4              5              6 
+##     Washington  West Virginia      Wisconsin        Wyoming 
+##              4              2              3              5</code></pre>
+</div>
+<div id="ventajas-y-limitaciones" class="section level3 unnumbered">
+<h3>Ventajas y limitaciones</h3>
+<ul>
+<li>Procedimiento <strong>equiprobabilístico</strong>: todas las unidades de la población tienen la misma probabilidad de ser elegidas. Con lo cual, media y proporciones se estiman directamente mediante su equivalente muestral.</li>
+</ul>
+<!-- -->
+<ul>
+<li>Pero, es en general poco eficiente (algunas muestras pueden ser poco representativas).</li>
+</ul>
+</div>
+</div>
+<div id="muestreo-estratificado" class="section level2 unnumbered">
+<h2>Muestreo estratificado</h2>
+<ul>
+<li><p>Se puede mejorar notablemente la representatividad de la muestra estratificando el muestreo.</p></li>
+<li><p>Si la afijación del tamaño muestral en cada estrato es proporcioinal a su tamaño, obtendremos una muestra equiprobabilistica.</p></li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">##### Muestreo de una base de datos #####
+<span class="kw">require</span>(tidyverse)
+<span class="kw">require</span>(readxl) <span class="co">#para leer fichero de excel en R</span>
+## Precios de la  gasolina 98 en España
+gasolineras =<span class="st"> </span><span class="kw">read_excel</span>(<span class="st">&quot;data/gasolineras.xls&quot;</span>,<span class="dt">skip=</span><span class="dv">3</span>) <span class="co">#Fuente: https://geoportalgasolineras.es</span>
+gasolineras</code></pre></div>
+<pre><code>## # A tibble: 6,495 x 10
+##    Provincia Localidad Dirección Margen `Toma de datos` Precio Rótulo
+##    &lt;chr&gt;     &lt;chr&gt;     &lt;chr&gt;     &lt;chr&gt;  &lt;chr&gt;            &lt;dbl&gt; &lt;chr&gt; 
+##  1 SANTA CR~ GRANADIL~ CARRETER~ D      09/01/2019 11:~  0.928 PCAN  
+##  2 SANTA CR~ CUESTA, ~ AVENIDA ~ D      09/01/2019 09:~  0.934 PCAN  
+##  3 SANTA CR~ LA LAGUNA PLAZA SA~ N      09/01/2019 06:~  0.935 TGAS  
+##  4 SANTA CR~ LA LAGUNA GLORIETA~ N      09/01/2019 13:~  0.935 DISA ~
+##  5 SANTA CR~ BALDIOS,~ CARRETER~ D      09/01/2019 00:~  0.935 TGAS ~
+##  6 SANTA CR~ SAN CRIS~ AVENIDA ~ N      09/01/2019 13:~  0.935 SHELL~
+##  7 SANTA CR~ SANTA CR~ CALLE SU~ D      09/01/2019 10:~  0.935 CANAR~
+##  8 SANTA CR~ GUANCHA ~ CARRETER~ D      08/01/2019 06:~  0.937 TGAS ~
+##  9 SANTA CR~ GUANCHA ~ AVENIDA ~ N      09/01/2019 11:~  0.937 PCAN  
+## 10 SANTA CR~ REALEJOS~ CARRETER~ N      10/01/2019 12:~  0.937 PCAN ~
+## # ... with 6,485 more rows, and 3 more variables: `Tipo venta` &lt;chr&gt;,
+## #   Rem. &lt;chr&gt;, Horario &lt;chr&gt;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(gasolineras<span class="op">$</span>Precio) <span class="co">#resumen de la distribución del precio</span></code></pre></div>
+<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##   0.928   1.313   1.339   1.327   1.365   1.549</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">n=<span class="dv">250</span> <span class="co"># tamaño muestral</span>
+muestra &lt;-<span class="st"> </span>gasolineras <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">sample_n</span>(<span class="dt">size=</span>n) 
+<span class="kw">summary</span>(muestra<span class="op">$</span>Precio) <span class="co">#distribución del precio en la muestra</span></code></pre></div>
+<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##   0.979   1.319   1.339   1.331   1.369   1.425</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">#### Muestreo estratificado (proporcional) ####
+muestra &lt;-<span class="st"> </span>gasolineras <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">group_by</span>(Provincia) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">sample_frac</span>(.<span class="dv">1</span>) <span class="co"># 1% en cada provincia  </span>
+muestra <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">summarise</span>(<span class="dt">media=</span><span class="kw">mean</span>(Precio),<span class="dt">n =</span> <span class="kw">n</span>())</code></pre></div>
+<pre><code>## # A tibble: 51 x 3
+##    Provincia       media     n
+##    &lt;chr&gt;           &lt;dbl&gt; &lt;int&gt;
+##  1 ÁLAVA            1.36     4
+##  2 ALBACETE         1.31     9
+##  3 ALICANTE         1.34    29
+##  4 ALMERÍA          1.34    10
+##  5 ASTURIAS         1.37    14
+##  6 ÁVILA            1.34     4
+##  7 BADAJOZ          1.33     9
+##  8 BALEARS (ILLES)  1.39    15
+##  9 BARCELONA        1.36    54
+## 10 BURGOS           1.34     8
+## # ... with 41 more rows</code></pre>
+<div class="ej">
+<p>
+Estratificar la muestra por fecha de toma de datos (no tomar en cuenta la hora! Para ello, Utilizar la función <code>separate</code>).
+</p>
+</div>
+</div>
+<div id="muestreo-de-una-poblacion-teorica" class="section level2 unnumbered">
+<h2>Muestreo de una población teorica</h2>
+<ul>
+<li>Existen modelos (o arquetipos) de distribución que simplifican considerablemente el análisis de los fenómenos aleatorios.</li>
+</ul>
+<!-- -->
+<ul>
+<li>Estos modelos de distribución descansan sobre dos hipótesis básicas:
+<ul>
+<li><strong>Homogeneidad</strong> (los sujetos de la población tienen la misma probabilidad de enfermar)</li>
+<li><strong>Independencia</strong> (la enfermedad ocurre de manera independiente en cada sujeto)</li>
+</ul></li>
+</ul>
+<!-- -->
+<ul>
+<li>A pesar de que en practica estas hipótesis no se cumplen de manera estricta, estos modelos
+<ul>
+<li>proporcionan en muchas ocasiones una buena aproximación.</li>
+<li>permiten definir una marco teórico (o población teórica) a contrastar con la realidad.</li>
+</ul></li>
+</ul>
+<div id="distribucion-binomial" class="section level3 unnumbered">
+<h3>Distribución Binomial</h3>
+<p>Así, podríamos suponer que todas las manzanas que llegan a un supermercado tienen la misma probabilidad <span class="math inline">\(p\)</span> de dañarse después de un día en cámara fría y que estos daños ocurren de manera independientes (¡dudoso!). Entonces, el número de frutas dañadas en una caja de <span class="math inline">\(n\)</span> manzanas se distribuye como una distribución binomial <span class="math inline">\(B(n,p)\)</span>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">n=<span class="dv">40</span>
+p=.<span class="dv">2</span> <span class="co">#probabilidad de daño igual al 20%</span>
+ndaños=<span class="kw">rbinom</span>(<span class="dv">500</span>,n,p) <span class="co">#simulación del número de frutas dañadas en 500 cajas de n manzanas</span>
+ndaños</code></pre></div>
+<pre><code>##   [1]  8  7  8  8  7  6 17  5  6  8 10 10  6  8 11  4  7 13  8 12  8  6  9
+##  [24]  5  8  8  6  9  8  8  4  7 12 13  8  4  9  8  8  6  7  8  8  7  7  5
+##  [47] 10  4  7 13 10  8  9  9  8  4  7  6  5 13 11  6  8 13  7  4 11 11  7
+##  [70]  6  8  9  7  5  6  9  6  7 14  5  7 12  9  6  7 10  5 13  6  6 11  7
+##  [93]  7  8 12  5  8  8  3  7 10  6  5  5  4  8  7  6 12  7 14 11 10 11 13
+## [116]  4  8  6  6  7 10 11 10  9 11  6 10  8  5 10 10  6 11  5  7  6  7  9
+## [139]  7 12  6  9 10 10 10  4  4  5  9  6 12  7  6  6  8 10  8  7  8  8  8
+## [162]  6  8  7  5  6  5 10  9 11  9 10  8 11 10 10 10  8  9 11  7  5 11  4
+## [185]  5  7  6 15  8  7 14 12  7  5  8 11  7  6  7  8 10  8  8  8  6  6 11
+## [208]  8  7 12  9  6 12 10 11  5  3 10  8  9  8  7  8  6  8  9 10  9  8 10
+## [231] 14  8 10  8  7  3 12 10 11  8  9  3 10  4  4  8  6  5 11 11 11  5  9
+## [254] 10  5 14 11  9 13  9 11  8  8  8 15  5 12  8 10  8  4  9  9  9  5  8
+## [277]  5  8 17  8  6  8  4  7  8  7  4  7  9  9  9  6  7 11  6  7 11  6  6
+## [300]  8  5  5 10  6 13 11  9 10 11 10  8  5  9  6  6  9 10  9  9 11 11 10
+## [323]  9  6  9  8  8  8  4  9  8  3  6 10  8 11  7  9 17  7  9  6  6  3  6
+## [346]  8  8  9 12 12  6  5  8  8  9  9  5  6  6 12 10  7  9  8  9  8 10  9
+## [369]  9  7  8  7  9 13  9  4  5 11  6  6 11 12  6  6  5  7  2  9  9  4  4
+## [392] 10 10 10 10  9  7  2  6  7  9  6 12  8 15  9  7  7 13  7  7 10  3  8
+## [415]  4 10  8  3  5  3  8  6  8 15  7  6 10  9 10  5  9  4  7  7  3 11 13
+## [438]  7  6  7  4 14  8 10 11 10  4  8  5  3 10  9 11 11  7 11 10  8  8 14
+## [461] 10  6  7  8  9  8 12  9  8  7 13 10  6  7  4  5  9  8  6 11 10  5  9
+## [484] 11  9 10  7  8  5  9 10  8  9 10 10  7  8  8  5  7</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">qplot</span>(ndaños,<span class="dt">geom=</span><span class="st">&quot;bar&quot;</span>) <span class="co">#distribución empirica del número de frutas dañadas </span></code></pre></div>
+<p><img src="EstadisticaR_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+</div>
+<div id="distribucion-normal" class="section level3 unnumbered">
+<h3>Distribución Normal</h3>
+<p>La distribución normal (o gaussiana) es la más utilizada para modelizar las variaciones de una variable continua. Razones principales de este éxito:</p>
+<ul>
+<li><p>Su simplicidad (sólo depende de la media y de la desviación típica de la variable)</p></li>
+<li><p>El <strong>Teorema Central del Limite</strong> que afirma que el promedio de un gran numero de observaciones independientes tiene aproximadamente un comportamiento normal.</p></li>
+<li><p>Apropiada para modelizar fenómenos naturales sometidos a numerosos efectos aleatorios de pequeña magnitud (Ej.:errores de medida y medidas antropometricas en población homogénea).</p></li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">####### Altura de niñas españolas de 5 años 
+mu=<span class="dv">108</span> <span class="co">#altura media de las niñas (en cm)</span>
+sigma=<span class="dv">10</span> <span class="co">#variación promedia de la altura entre niñas (en cm)  </span>
+alturas=<span class="kw">rnorm</span>(<span class="dv">2000</span>,mu,sigma) <span class="co">#alturas de 2000 niñas seleccionadas al azar en la población </span>
+<span class="kw">summary</span>(alturas)</code></pre></div>
+<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##   81.19  101.44  108.20  108.25  114.75  142.57</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">qplot</span>(alturas) <span class="co">#histograma de la distribución de la altura </span></code></pre></div>
+<p><img src="EstadisticaR_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(alturas<span class="op">&gt;</span><span class="dv">115</span>) <span class="co">#proporción muestral de niñas con una altura superior a 115 cm</span></code></pre></div>
+<pre><code>## [1] 0.239</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">pnorm</span>(<span class="dv">115</span>,mu,sigma,<span class="ot">FALSE</span>) <span class="co">#probabilidad teorica (poblacional) de que una niña mida más de 115 cm</span></code></pre></div>
+<pre><code>## [1] 0.2419637</code></pre>
+<div class="ej">
+<p>
+En una fabrica, la maquina que rellena las botellas de coca-cola está calibrada para que en promedio tengan un volumen <span class="math inline"><span class="math inline">\(\mu=330\)</span></span> ml. Se sabe que la maquina tiene una precisión <span class="math inline"><span class="math inline">\(\sigma=5\)</span></span> ml (desviación típica del volumen de las botellas). Supongamos que en una muestra de 25 botellas sacada de la producción observamos que en promedio el volumen es igual a <span class="math inline"><span class="math inline">\(\bar{y}=327.5\)</span></span> ml. ¿Podemos concluir que la maquina se ha desajustado? Asumiendo que la maquina tiene errores normales, realizar un experimento de simulación para contrastar esta hipótesis.
+</p>
+</div>
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="inferencia-sobre-medias.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": false,
+"twitter": false,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": ["EstadisticaR.pdf"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

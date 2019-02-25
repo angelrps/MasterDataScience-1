@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>3 Inferencia sobre medias | Estadística básica con R</title>
+  <meta name="description" content="3 Inferencia sobre medias | Estadística básica con R">
+  <meta name="generator" content="bookdown  and GitBook 2.6.7">
+
+  <meta property="og:title" content="3 Inferencia sobre medias | Estadística básica con R" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="3 Inferencia sobre medias | Estadística básica con R" />
+  
+  
+  
+
+<meta name="author" content="Olivier Nuñez">
+
+
+<meta name="date" content="2019-02-22">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="muestreo.html">
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; background-color: #ffffff; color: #1f1c1b; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; background-color: #ffffff; color: #a0a0a0; border-right: 1px solid #a0a0a0; }
+td.sourceCode { padding-left: 5px; }
+pre, code { color: #1f1c1b; background-color: #ffffff; }
+code > span.kw { color: #1f1c1b; font-weight: bold; } /* Keyword */
+code > span.dt { color: #0057ae; } /* DataType */
+code > span.dv { color: #b08000; } /* DecVal */
+code > span.bn { color: #b08000; } /* BaseN */
+code > span.fl { color: #b08000; } /* Float */
+code > span.cn { color: #aa5500; } /* Constant */
+code > span.ch { color: #924c9d; } /* Char */
+code > span.sc { color: #3daee9; } /* SpecialChar */
+code > span.st { color: #bf0303; } /* String */
+code > span.vs { color: #bf0303; } /* VerbatimString */
+code > span.ss { color: #ff5500; } /* SpecialString */
+code > span.im { color: #ff5500; } /* Import */
+code > span.co { color: #898887; } /* Comment */
+code > span.do { color: #607880; } /* Documentation */
+code > span.an { color: #ca60ca; } /* Annotation */
+code > span.cv { color: #0095ff; } /* CommentVar */
+code > span.ot { color: #006e28; } /* Other */
+code > span.fu { color: #644a9b; } /* Function */
+code > span.va { color: #0057ae; } /* Variable */
+code > span.cf { color: #1f1c1b; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #1f1c1b; } /* Operator */
+code > span.bu { color: #644a9b; font-weight: bold; } /* BuiltIn */
+code > span.ex { color: #0095ff; font-weight: bold; } /* Extension */
+code > span.pp { color: #006e28; } /* Preprocessor */
+code > span.at { color: #0057ae; } /* Attribute */
+code > span.re { color: #0057ae; } /* RegionMarker */
+code > span.in { color: #b08000; } /* Information */
+code > span.wa { color: #bf0303; } /* Warning */
+code > span.al { color: #bf0303; font-weight: bold; } /* Alert */
+code > span.er { color: #bf0303; text-decoration: underline; } /* Error */
+code > span. { color: #1f1c1b; } /* Normal */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Preámbulo</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#estadistica-descriptiva-versus-estadistica-inferencial"><i class="fa fa-check"></i>Estadística descriptiva versus Estadística Inferencial</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#error-en-la-decision"><i class="fa fa-check"></i>Error en la decisión</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="muestreo.html"><a href="muestreo.html"><i class="fa fa-check"></i><b>2</b> Muestreo</a><ul>
+<li class="chapter" data-level="" data-path="muestreo.html"><a href="muestreo.html#aplicaciones"><i class="fa fa-check"></i>Aplicaciones</a></li>
+<li class="chapter" data-level="" data-path="muestreo.html"><a href="muestreo.html#que-es-el-muestreo"><i class="fa fa-check"></i>¿Qué es el muestreo?</a></li>
+<li class="chapter" data-level="" data-path="muestreo.html"><a href="muestreo.html#objetivo-del-muestreo"><i class="fa fa-check"></i>Objetivo del muestreo</a></li>
+<li class="chapter" data-level="" data-path="muestreo.html"><a href="muestreo.html#error-muestral"><i class="fa fa-check"></i>Error muestral</a></li>
+<li class="chapter" data-level="" data-path="muestreo.html"><a href="muestreo.html#error-sistematico"><i class="fa fa-check"></i>Error sistemático</a></li>
+<li class="chapter" data-level="" data-path="muestreo.html"><a href="muestreo.html#muestreo-aleatorio-simple"><i class="fa fa-check"></i>Muestreo aleatorio simple</a><ul>
+<li class="chapter" data-level="" data-path="muestreo.html"><a href="muestreo.html#implementacion"><i class="fa fa-check"></i>Implementación</a></li>
+<li class="chapter" data-level="" data-path="muestreo.html"><a href="muestreo.html#ventajas-y-limitaciones"><i class="fa fa-check"></i>Ventajas y limitaciones</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="muestreo.html"><a href="muestreo.html#muestreo-estratificado"><i class="fa fa-check"></i>Muestreo estratificado</a></li>
+<li class="chapter" data-level="" data-path="muestreo.html"><a href="muestreo.html#muestreo-de-una-poblacion-teorica"><i class="fa fa-check"></i>Muestreo de una población teorica</a><ul>
+<li class="chapter" data-level="" data-path="muestreo.html"><a href="muestreo.html#distribucion-binomial"><i class="fa fa-check"></i>Distribución Binomial</a></li>
+<li class="chapter" data-level="" data-path="muestreo.html"><a href="muestreo.html#distribucion-normal"><i class="fa fa-check"></i>Distribución Normal</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="inferencia-sobre-medias.html"><a href="inferencia-sobre-medias.html"><i class="fa fa-check"></i><b>3</b> Inferencia sobre medias</a><ul>
+<li class="chapter" data-level="" data-path="inferencia-sobre-medias.html"><a href="inferencia-sobre-medias.html#test-sobre-una-media"><i class="fa fa-check"></i>Test sobre una media</a><ul>
+<li class="chapter" data-level="" data-path="inferencia-sobre-medias.html"><a href="inferencia-sobre-medias.html#planteamiento"><i class="fa fa-check"></i>Planteamiento</a></li>
+<li class="chapter" data-level="" data-path="inferencia-sobre-medias.html"><a href="inferencia-sobre-medias.html#teorema-central-del-limite"><i class="fa fa-check"></i>Teorema central del limite</a></li>
+<li class="chapter" data-level="" data-path="inferencia-sobre-medias.html"><a href="inferencia-sobre-medias.html#una-horquilla-para-la-media-poblacional"><i class="fa fa-check"></i>Una horquilla para la media poblacional</a></li>
+<li class="chapter" data-level="" data-path="inferencia-sobre-medias.html"><a href="inferencia-sobre-medias.html#test-de-student"><i class="fa fa-check"></i>Test de Student</a></li>
+<li class="chapter" data-level="" data-path="inferencia-sobre-medias.html"><a href="inferencia-sobre-medias.html#el-p-valor"><i class="fa fa-check"></i>El p-valor</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="inferencia-sobre-medias.html"><a href="inferencia-sobre-medias.html#comparando-medias"><i class="fa fa-check"></i>Comparando medias</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Estadística básica con R</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="inferencia-sobre-medias" class="section level1">
+<h1><span class="header-section-number">3</span> Inferencia sobre medias</h1>
+<p>En estadística, la <em>Inferencia</em> es el conjunto de técnicas para extraer conclusiones sobre la población a partir de una muestra (metáfora de la sopa).</p>
+<div class="figure">
+<img src="imagenes/SamplingvsInference.png" alt="Muestreo versus Inferencia" height="188" />
+<p class="caption">Muestreo versus Inferencia</p>
+</div>
+<div id="test-sobre-una-media" class="section level2 unnumbered">
+<h2>Test sobre una media</h2>
+<div id="planteamiento" class="section level3 unnumbered">
+<h3>Planteamiento</h3>
+<p>Queremos contrastar si la media poblacional <span class="math inline">\(\mu=330\)</span> ml a partir de la observación del volumen medio <span class="math inline">\(\overline{y}=327.5\)</span> ml en una muestra de 25 botellas.</p>
+<p>Hasta que punto podemos confiar en el valor observado del volumen medio? O en otras palabras, ¿cómo varia <span class="math inline">\(\overline{y}\)</span> de una muestra a otra?</p>
+</div>
+<div id="teorema-central-del-limite" class="section level3 unnumbered">
+<h3>Teorema central del limite</h3>
+<ul>
+<li>El error estándar (o error de estimación) de <span class="math inline">\(\overline{y}\)</span> es proporcional a la desviación típica <span class="math inline">\(\sigma\)</span> de los datos: <span class="math display">\[\mathrm{se}\left(\overline{y}\right)=\frac{\sigma}{\sqrt{n}}\]</span></li>
+</ul>
+<!-- -->
+<ul>
+<li>Además, cuando <span class="math inline">\(n\)</span> es “grande”“, tenemos que <span class="math display">\[\overline{y}\sim N\left(\mu,\frac{\sigma}{\sqrt{n}}\right)\]</span> donde <span class="math inline">\(N\left(\mu,\sigma\right)\)</span> denota la distribución normal con media <span class="math inline">\(\mu\)</span> y desviación típica <span class="math inline">\(\sigma\)</span>.</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## Distribución de la media muestral en muestras de 25 botellas
+K=<span class="dv">1000</span> <span class="co">#número de muestras</span>
+medias=<span class="kw">replicate</span>(K,<span class="kw">mean</span>(<span class="kw">rnorm</span>(<span class="dv">25</span>,<span class="dv">330</span>,<span class="dv">5</span>)))
+<span class="kw">summary</span>(medias) <span class="co">#distribución de las medias </span></code></pre></div>
+<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##   327.0   329.3   329.9   330.0   330.7   332.8</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sd</span>(medias) <span class="co">#error estándar de la media muestral (teoricamente = sigma/sqrt(n)=5/sqrt(25)=1)</span></code></pre></div>
+<pre><code>## [1] 0.983899</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">qplot</span>(medias)</code></pre></div>
+<p><img src="EstadisticaR_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+</div>
+<div id="una-horquilla-para-la-media-poblacional" class="section level3 unnumbered">
+<h3>Una horquilla para la media poblacional</h3>
+<p>El <em>intervalo de confianza</em> es una horquilla que permite reflejar la precisión en la estimación.</p>
+<p>Típicamente, un intervalo de confianza (del 95%) de la media poblacional tiene la forma: <span class="math display">\[\overline{y}\pm1.96\times\mathrm{se}\left(\overline{y}\right)\]</span> donde <span class="math inline">\(1.96\)</span> corresponde al cuantil 97.5% de la distribución normal <span class="math inline">\(N\left(0,1\right)\)</span>.</p>
+<p>La confianza del intervalo corresponde a la proporción de muestras (entre todas la muestras posibles de tamaño <span class="math inline">\(n\)</span>) para las cuales el intervalo así construido contiene la media poblacional <span class="math inline">\(\mu\)</span>.</p>
+</div>
+<div id="test-de-student" class="section level3 unnumbered">
+<h3>Test de Student</h3>
+<p>Sin embargo, en practica la desviación típica <span class="math inline">\(\sigma\)</span> es desconocida y requiere ser estimada para construir el intervalo de confianza. Al sustituir <span class="math inline">\(\sigma\)</span> por su estimación en la muestra <span class="math inline">\(s=\)</span><code>sd(y)</code> en la expresión del error estándar de <span class="math inline">\(\overline{y}\)</span>, se obtiene el siguiente intervalo de confianza (del 95%): <span class="math display">\[\overline{y}\pm t_{(n-1),97.5\%}\times\frac{s}{\sqrt{n}}\]</span> donde <span class="math inline">\(t_{(n-1),97.5\%}\)</span> es el cuantil 97.5% de la distribución de student con <span class="math inline">\(n-1\)</span> grados de libertad.</p>
+<blockquote>
+<p><strong>Nota</strong>: Cabe mencionar que si <span class="math inline">\(n\simeq200\)</span>, la distribución de Student <span class="math inline">\(t_{(n-1)}\)</span> es muy próxima a la normal y tenemos que <span class="math inline">\(t_{(n-1),97.5\%}\simeq1.96\)</span></p>
+</blockquote>
+<blockquote>
+<p><strong>¿Cuando usar el test de Student?</strong> Si las observaciones son independientes y casi normales. Si estas condiciones no se cumplen se puede utilizar el test (no-parametrico) de Wilcoxon (más detalles en <code>?wilcox.test</code>).</p>
+</blockquote>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">### Utilización del Test de Student en R ####
+muestra=<span class="kw">c</span>(<span class="fl">326.4</span>,<span class="fl">324.5</span>,<span class="fl">319.2</span>,<span class="fl">332.9</span>,<span class="fl">328.9</span>,<span class="fl">331.3</span>,<span class="fl">327.4</span>,<span class="fl">323.6</span>,<span class="fl">322.7</span>,<span class="fl">323.9</span>,<span class="fl">325.3</span>,<span class="fl">329.6</span>,<span class="dv">338</span>,<span class="fl">328.8</span>,<span class="fl">327.6</span>,<span class="dv">333</span>,<span class="fl">333.7</span>,<span class="fl">335.6</span>,<span class="fl">319.2</span>,<span class="fl">320.2</span>,<span class="fl">327.9</span>,<span class="fl">330.3</span>,<span class="fl">326.9</span>,<span class="fl">320.2</span>,<span class="fl">330.4</span>)
+<span class="kw">t.test</span>(muestra,<span class="dt">mu=</span><span class="dv">330</span>) <span class="co">#contrasta si mu=330</span></code></pre></div>
+<pre><code>## 
+##  One Sample t-test
+## 
+## data:  muestra
+## t = -2.4522, df = 24, p-value = 0.02185
+## alternative hypothesis: true mean is not equal to 330
+## 95 percent confidence interval:
+##  325.3959 329.6041
+## sample estimates:
+## mean of x 
+##     327.5</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">t.test</span>(muestra,<span class="dt">mu=</span><span class="dv">330</span>,<span class="dt">alternative=</span><span class="st">&quot;less&quot;</span>) <span class="co">#contrasta si mu&gt;330</span></code></pre></div>
+<pre><code>## 
+##  One Sample t-test
+## 
+## data:  muestra
+## t = -2.4522, df = 24, p-value = 0.01093
+## alternative hypothesis: true mean is less than 330
+## 95 percent confidence interval:
+##      -Inf 329.2442
+## sample estimates:
+## mean of x 
+##     327.5</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(muestra)<span class="op">+</span><span class="kw">sd</span>(muestra)<span class="op">/</span><span class="kw">sqrt</span>(<span class="kw">length</span>(muestra))<span class="op">*</span><span class="kw">qt</span>(.<span class="dv">95</span>,<span class="dv">24</span>) <span class="co">#cálculo a mano del limite superior del IC (95%)</span></code></pre></div>
+<pre><code>## [1] 329.2442</code></pre>
+</div>
+<div id="el-p-valor" class="section level3 unnumbered">
+<h3>El p-valor</h3>
+<ul>
+<li>Una manera de medir la credibilidad de la hipótesis <span class="math inline">\(H_{0}:\mu \geq 330\)</span> ml, consiste en calcular la probabilidad (en caso de que <span class="math inline">\(H_{0}\)</span> fuese cierta) de observar algo que discrepe más de esta hipótesis que lo que observamos.</li>
+</ul>
+<!-- -->
+<ul>
+<li>Si es inferior al nivel de significación establecido (<span class="math inline">\(\alpha=5\%\)</span>), rechazamos la hipótesis nula <span class="math inline">\(H_{0}\)</span>.</li>
+</ul>
+<!-- -->
+<ul>
+<li>En el ejemplo anterior observamos <span class="math inline">\(\overline{y}=327.5\)</span> ml, por lo tanto la probabilidad de observar algo aún más alejado de la hipótesis <span class="math inline">\(H_{0}:\mu \geq 330\)</span> sería: <span class="math display">\[p=P\left(\overline{y}&lt;327.5|H_{0}\mbox{ cierta}\right)=\mathsf{pt\left(-2.45,24\right)}\simeq1.1\%\]</span></li>
+</ul>
+</div>
+</div>
+<div id="comparando-medias" class="section level2 unnumbered">
+<h2>Comparando medias</h2>
+<p>En el ejemplo anterior, comparamos la población de estudio con una población de referencia o teórica (las botellas producidas con las botellas que esperamos observar si la maquina está bien calibrada).</p>
+<p>Supongamos que queramos ahora comparar dos poblaciones en estudio (chicas versus chicos, grupo de tratamiento versus grupo placebo, …). En este caso, observaríamos dos muestras a partir de las cuales pretendemos decidir si hay diferencias entre las dos poblaciones de donde fueron sacadas.</p>
+<p>A partir de la base de datos <code>births</code> de la librería <code>openintro</code> se pretende contrastar el efecto del habito de la madre con el tabaco sobre el peso del neonato.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">require</span>(openintro)
+<span class="kw">glimpse</span>(births) <span class="co">#?births para más detalles</span></code></pre></div>
+<pre><code>## Observations: 150
+## Variables: 9
+## $ fAge      &lt;int&gt; 31, 34, 36, 41, 42, 37, 35, 28, 22, 36, 27, 35, 25, ...
+## $ mAge      &lt;int&gt; 30, 36, 35, 40, 37, 28, 35, 21, 20, 25, 19, 34, 19, ...
+## $ weeks     &lt;int&gt; 39, 39, 40, 40, 40, 40, 28, 35, 32, 40, 32, 40, 41, ...
+## $ premature &lt;fct&gt; full term, full term, full term, full term, full ter...
+## $ visits    &lt;int&gt; 13, 5, 12, 13, NA, 12, 6, 9, 5, 13, 5, 15, 13, 10, 1...
+## $ gained    &lt;int&gt; 1, 35, 29, 30, 10, 35, 29, 15, 40, 34, 32, 20, 47, 2...
+## $ weight    &lt;dbl&gt; 6.88, 7.69, 8.88, 9.00, 7.94, 8.25, 1.63, 5.50, 2.69...
+## $ sexBaby   &lt;fct&gt; male, male, male, female, male, male, female, female...
+## $ smoke     &lt;fct&gt; smoker, nonsmoker, nonsmoker, nonsmoker, nonsmoker, ...</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">qplot</span>(smoke,weight,<span class="dt">data=</span>births,<span class="dt">geom=</span><span class="st">&quot;boxplot&quot;</span>)</code></pre></div>
+<p><img src="EstadisticaR_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+<p>Se aprecia una diferencia entre los dos grupos, siendo los hijos de madres no fumadoras los que suelen tener mayor peso al nacer. Sin embargo, esta diferencia podría ser fruto del azar (del muestreo). Para evaluar si esta diferencia es significativo se puede aplicar el test de Student:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"> <span class="kw">t.test</span>(weight<span class="op">~</span>smoke,<span class="dt">data=</span>births)</code></pre></div>
+<pre><code>## 
+##  Welch Two Sample t-test
+## 
+## data:  weight by smoke
+## t = 1.4967, df = 89.277, p-value = 0.138
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##  -0.1311663  0.9321663
+## sample estimates:
+## mean in group nonsmoker    mean in group smoker 
+##                  7.1795                  6.7790</code></pre>
+<p>Para un nivel de significación del <span class="math inline">\(5\%\)</span>, la diferencia observada no es significativa (el p-valor <span class="math inline">\(p=9.31\%&gt;5\%\)</span>). Sin embargo, se trata de un efecto importante:<span class="math inline">\(0.40\)</span> libras, es decir una diferencia promedia de unos 200 gramos entre los dos grupos de neonatos, y merece mayor investigación. Acordarse del aforismo “Absence of evidence is not evidence of absence!”.</p>
+<div class="ej">
+<p>
+Muestrear la base de datos <code>babies</code> del paquete <code>openintro</code> de manera que los tamaños muestrales de los dos grupos (madres fumadoras y no fumadoras; quitar valores ausentes) sean sucesivamente <span class="math inline"><span class="math inline">\(n= 10,50,100,250\)</span></span>. Contrastar el efecto del tabaco sobre el peso del neonato para estos distintos tamaños muestrales.
+</p>
+</div>
+<div class="nota">
+<p>
+Por defecto, se supone que las dos muestras son independientes (la opción <code>paired=FALSE</code>en la función <code>t.test</code>). Pero, si los dos grupos corresponden a medidas realizadas sobre los mismos individuos, esta condición no se cumple y el test de Student se ha de utilizar con la opción <code>paired=TRUE</code>.
+</p>
+</div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">######### Simulación de un ejemplo con muestras dependientes
+nn=<span class="dv">100</span>
+col0=<span class="kw">rnorm</span>(nn,<span class="dv">200</span>,<span class="dv">50</span>) <span class="co">#valor basal de colesterol</span>
+efecto =<span class="st"> </span><span class="kw">rnorm</span>(nn,<span class="op">-</span><span class="dv">10</span>, <span class="dv">2</span>) <span class="co">#efecto del tratamiento con estatina</span>
+col1=col0 <span class="op">+</span><span class="st"> </span>efecto <span class="co">#valor del colesterol despues del tratamiento</span>
+datos=<span class="kw">data_frame</span>(<span class="dt">antes=</span>col0,<span class="dt">despues=</span>col1) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">gather</span>(visita)
+
+<span class="kw">t.test</span>(value<span class="op">~</span>visita,<span class="dt">data=</span>datos) <span class="co">#test de Student para muestras independientes</span></code></pre></div>
+<pre><code>## 
+##  Welch Two Sample t-test
+## 
+## data:  value by visita
+## t = 1.2712, df = 198, p-value = 0.2051
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##  -5.482065 25.371169
+## sample estimates:
+##   mean in group antes mean in group despues 
+##              200.6394              190.6948</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">t.test</span>(value<span class="op">~</span>visita,<span class="dt">data=</span>datos,<span class="dt">paired=</span><span class="ot">TRUE</span>) <span class="co">#test de Student para datos emparejados</span></code></pre></div>
+<pre><code>## 
+##  Paired t-test
+## 
+## data:  value by visita
+## t = 46.39, df = 99, p-value &lt; 2.2e-16
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##   9.519195 10.369909
+## sample estimates:
+## mean of the differences 
+##                9.944552</code></pre>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="muestreo.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": false,
+"twitter": false,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": ["EstadisticaR.pdf"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
