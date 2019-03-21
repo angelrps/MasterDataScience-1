@@ -1,0 +1,97 @@
+id,pregunta
+[0],NW.js application writing to AppData/Local Directory
+[1],Get screenX for DOM element in Javascript
+[2],Non-Circular JSON returning circular JSON error
+[3],Compare two images the python/linux way
+[4],Recursive CTE performing slower than hard-coding the recursive actions
+[5],"PyQt5 to PySide2, loading UI-Files in different classes"
+[6],Problem Writing Attributes to VD Structure using PyHDF
+[7],Copying 1 single character into string
+[8],How to change my columns in R from a class matrix to vectors?
+[9],Primality test using logical or relational operators on a 3-bit number
+[10],Angular 7 - Trigger FormControl validation manually
+[11],Change Mouse Wheel event on Window Object to passive: false - Javascript
+[12],How to create a single-window GUI
+[13],Image cannot be set with ImageSource.FromStream
+[14],Allocating a Type so it Matches a Variables Type
+[15],"Need Help Making Buttons to perform for loops when you input a number, Thank you"
+[16],Print middle row and column in 2d array java
+[17],I need help figuring out how to write a while loop java
+[18],Using Kotlin code transpiled to JavaScript in an Angular/client-side project
+[19],A DF in R has a factor value and is not left joining to another DF
+[20],How to change opacity of other list items on click?
+[21],MySQL Select date ranges between data series separated with NULL
+[22],how to use first two rows in dataframe to be column indexes in python
+[23],Amazon Cognito + iOS Swift - Custom UI
+[24],How to use tf.reset_default_graph()
+[25],How do I disable warnings for a static framework in Xcode?
+[26],Emit event from dynamically created child component to parent component
+[27],Can I make a join condition that joins if the join key has a particular field?
+[28],How to find the multivariate empirical cumulative distribution function (CDF) in R?
+[29],Include `meta` member in resource identifiers in `relationships` object
+[30],Append a text to total price only in Woocommerce checkout page
+[31],Uniquely identify function definition node
+[32],Prevent clearing of field when field not rendered in form
+[33],Is it allowed/possible to call an R function or fortran code within a pragma openmp parallel for loop in Rcpp?
+[34],Eager load polymorphic model that belongs to a certain model type
+[35],Add weightings to Integer Linear Programming in Python / PuLP
+[36],How add Helpers in API-only Rails Application
+[37],Why the width of grid system is more greater than body?
+[38],.NET Graph SDK Updating Sharepoint Online List Item Values
+[39],Filling NULL values with preceding Non-NULL values using FIRST_VALUE
+[40],Implementation of Natash2 alg by Allen-Zhu?
+[41],"Connecting NextJS, next-i18next, with-redux, with-redux-saga: “Error: If you have a getInitialProps method in your custom _app.js file…”"
+[42],Can´t find what causes my site to have a WAIT time of 3.6 to 3.9 seconds
+[43],Webforms ReportViewer Toolbar V15.0 export drop down menu not showing all extensions
+[44],How to serialize to java.util.List and java.util.Map with Jackson
+[45],Selenium Click fails to click on elements
+[46],React | Using 'parentNode' correctly?
+[47],Referencing XAML using a string C#
+[48],ASP.NET Core API Service authentication
+[49],HEAD requests with aiohttp is dog slow
+[50],Insert data in a table in another schema from a materialized view using a procedure in Oracle
+[51],AnyLogic- How to create a roundabout in AnyLogic software
+[52],AWS Elastic search Scala integration with high level rest client sign the request interceptor
+[53],escape strings in SQLAlchemy's order_by
+[54],Must the username of NameNode be equal to DataNode's?
+[55],Is source being wrongly set by AWS SES SDK when sending e-mails?
+[56],Extracting words from a space (comma) separated string
+[57],XMLDecoder >> java.lang.IllegalArgumentException: Unsupported element
+[58],Use inserted ids from Laravel and Dropzone image uploaded data
+[59],How to get probabilities for SGDClassifier (LinearSVM)
+[60],WSO2 EI Multiple certificates per endpoint
+[61],Laravel Auth Login Page Just Refreshes
+[62],Pass multipart/form-data through API Gateway in Lambda Proxy integration
+[63],Java ShortBuffer in Kotlin AudioRecord and AudioTrack Android
+[64],"Add leading 0 to a string using splice and without zfill, format etc"
+[65],SAS: change the colour and thickness of the reference label in proc gplot
+[66],Makefile - Compile Single Objects in different directory
+[67],jQuery replace one class with another
+[68],Why does auto_explain only log nested statements on first call of PL/pgSQL function?
+[69],Script to parse FROM email address from many text files
+[70],Changing the color of the color key text in heatmap.2 in r
+[71],New Bitmap inside Background worker's body causes Memory Leak
+[72],Loopback 4.x - “Error: The connector has not been initialized.”
+[73],How to redirect to referring page and include variables
+[74],Google OR-tools: Constraint for a MIP solver
+[75],Upgrading maven-surefire-plugin from 2.19.1 to 2.22.1 causes tests to not run
+[76],Microsoft Graph - Filtering users by X500 proxyAddress
+[77],Register Type as Typed Abstract Base Class in AutoFac
+[78],Getting Selected Text/Cursor Position in Content Editable Element in Iframe Add-ons Developmentt
+[79],Has anyone tried to do a dropdown to change membership level in membermouse?
+[80],Django Custom User Model - Form Tuple Problems
+[81],SSRS count only visible group headers (footers)
+[82],"Spring, AWS: java.lang.AbstractMethodError: null at org.springframework.core.OrderComparator.findOrder(OrderComparator.java:142)"
+[83],"FFmpeg.swr_convert: audio to raw 16 bit pcm, to be used with xna SoundEffect. Audio cuts out when i convert"
+[84],Replication between local PouchDB instances
+[85],Elasticsearch and Laravel scout-elasticsearch-driver return empty response
+[86],celery task fails with dlib cnn face detection
+[87],How to parallelize a computation?
+[88],Populating UIAlertController with UIAlertActions based on string array
+[89],Is there a 'clamp' method/sub for ranges/Num etc in Perl6
+[90],How to do client-side validation of password change in Active Directory
+[91],Does stride loop work for Metal framework?
+[92],FeathersJS: Injecting HTTP headers in Service Test
+[93],Convert xmlWriter.WriteElementString value to date and time
+[94],VS Code integrated terminal $PATH not using ~/.bash_profile
+[95],How to memoize recursive path of length n search
